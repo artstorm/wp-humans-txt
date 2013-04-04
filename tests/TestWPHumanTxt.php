@@ -18,11 +18,4 @@ class TestWPHumanTxt extends WP_UnitTestCase {
     {  
         $this->assertFalse(null == $this->plugin);
     }
-
-    public function testMethod()
-    {
-        $test = $this->plugin->testing();
-        $this->assertEquals('hello world', $test);
-    }
-
 }
