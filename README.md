@@ -5,9 +5,8 @@
 WordPress Plugin that generates a virtual humans.txt file according to the
 specifications at humanstxt.org.
 
-* [WordPress Repository](http://wordpress.org/extend/plugins/xxx/)
-* [Support Forum](http://wordpress.org/support/plugin/xxx)
-
+* [WordPress Repository](http://wordpress.org/extend/plugins/wp-humanstxt/)
+* [Support Forum](http://wordpress.org/support/plugin/wp-humanstxt)
 
 ## Contributing to this project
 
