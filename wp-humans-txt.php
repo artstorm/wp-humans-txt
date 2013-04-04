@@ -69,11 +69,6 @@ class WPHumansTxt
         new WPHumansTxt_Rewrite;
     }
 
-    public function testing()
-    {
-        return 'hello world';
-    }
-
     /**
      * PSR-0 compliant autoloader to load classes as needed.
      *
