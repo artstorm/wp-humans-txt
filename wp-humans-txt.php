@@ -158,6 +158,11 @@ class WPHumansTxt
         echo '</strong></p></div>';
     }
 
+    /**
+     * Get the name of this plugin.
+     *
+     * @return string The plugin name.
+     */
     private function getPluginName()
     {
         $data = get_plugin_data(self::FILE);
