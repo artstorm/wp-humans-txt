@@ -15,3 +15,4 @@ TEMP DESCRIPTION
 
 Follows the "standard" precisely.
 Outputs it as plain text, with utf-8 encoding
+the editor allows tab key.

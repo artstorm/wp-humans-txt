@@ -11,7 +11,7 @@
         <h3>humans.txt</h3>
         <p><label for="humanstxt">Enter your humans.txt below.</label></p>
         <textarea name="humanstxt" id="humanstxt" class="code" cols="80"
-            rows="10"><?php
+            rows="20"><?php
             echo $options['humanstxt'];
         ?></textarea>
 
