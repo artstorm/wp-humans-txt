@@ -65,6 +65,7 @@ class WPHumansTxt
         if (!$this->testHost()) {
             return;
         }
+        add_action('init', array($this, 'textDomain'));
 
         new WPHumansTxt_Rewrite;
     }
@@ -96,6 +97,24 @@ class WPHumansTxt
         $fileName .='.php';
 
         require $fileName;
+    }
+
+    /**
+     * Loads the plugin text domain for translation
+     */
+    public function textDomain()
+    {
+        $domain = self::TEXT_DOMAIN;
+        $locale = apply_filters('plugin_locale', get_locale(), $domain);
+        load_textdomain(
+            $domain,
+            WP_LANG_DIR.'/'.$domain.'/'.$domain.'-'.$locale.'.mo'
+        );
+        load_plugin_textdomain(
+            $domain,
+            false,
+            dirname(plugin_basename(__FILE__)).'/lang/'
+        );
     }
 
     // -------------------------------------------------------------------------
