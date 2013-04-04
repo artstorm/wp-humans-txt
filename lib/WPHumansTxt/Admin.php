@@ -18,7 +18,7 @@ class WPHumansTxt_Admin
     public function menu()
     {
         add_options_page(
-            'WP humans.txt Options',
+            'WP humans.txt '.__('Options', WPHumansTxt::TEXT_DOMAIN),
             'WP humans.txt',
             'administrator',
             plugin_basename(WPHumansTxt::FILE),
@@ -28,10 +28,27 @@ class WPHumansTxt_Admin
 
     public function renderpage()
     {
+        if (isset($_POST['submit']) &&
+            isset($_POST['wp_humans_txt_nonce']) &&
+            wp_verify_nonce($_POST['wp_humans_txt_nonce'], 'wp_humans_txt')
+        ) {
+            $this->update();
+        }
+
         $data = array(
-            // 'pageSlug'    => PayPalDonations_Admin::PAGE_SLUG,
-            // 'optionDBKey' => PayPalDonations::OPTION_DB_KEY,
+            'options' => get_option(WPHumansTxt::OPTION_KEY),
         );
         echo WPHumansTxt_View::render('admin', $data);
     }
+
+    private function update()
+    {
+        $options = array(
+            'humanstxt' => $_POST['humanstxt']
+        );
+
+        update_option(WPHumansTxt::OPTION_KEY, $options);
+    }
+
+
 }

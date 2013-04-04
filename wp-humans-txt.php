@@ -42,6 +42,7 @@ class WPHumansTxt
     const MIN_PHP_VERSION     = '5.2.4';
     const MIN_WP_VERSION      = '3.2';
     const TEXT_DOMAIN         = 'wp-humans-txt';
+    const OPTION_KEY          = 'wp_humans_txt';
     const FILE                = __FILE__;
 
     /**
