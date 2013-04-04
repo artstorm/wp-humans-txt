@@ -68,19 +68,24 @@ function bump($newVersion)
         sleep(1)
     }
 
-
-    cat $PLUGIN_FILE `
-        | %{$_ -replace "Version: $oldVersion", "Version: $newVersion"} `
-        | Set-Content "$($PLUGIN_FILE).tmp"
-
-    correctEncoding("$($PLUGIN_FILE).tmp")
-
-    # Copy and clean up
-    cp "$($PLUGIN_FILE).tmp" $PLUGIN_FILE
-    Remove-Item "$($PLUGIN_FILE).tmp"
+    findReplaceFile $PLUGIN_FILE "Version: $oldVersion" "Version: $newVersion"
+    findReplaceFile 'readme.txt' "Stable tag: $oldVersion" "Stable tag: $newVersion"
 
     Write-Host "Done!"
     Write-Host $('-' * 80)
+}
+
+function findReplaceFile($file, $old, $new)
+{
+    cat $file `
+        | %{$_ -replace $old, $new} `
+        | Set-Content "$($file).tmp"
+
+    correctEncoding("$($file).tmp")
+
+    # Copy and clean up
+    cp "$($file).tmp" $file
+    Remove-Item "$($file).tmp"
 }
 
 function correctEncoding($file)
@@ -191,7 +196,7 @@ switch ($args[0])
             break
         }
 
-        # And bump
+        # And do the bumps
         bump($newVersion)
 
         # Let's display some reminders
