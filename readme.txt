@@ -40,6 +40,22 @@ at humanstxt.org. The virtual file is located at domain.com/humans.txt.
    options the plugin has stored in the database.
 
 
+== Frequently Asked Questions ==
+
+= Where can I get support? =
+
+This is a free plugin, so support is not guaranteed. Post your question in the
+support forum and help might be provided by the developer or by the community.
+
+* [Support Forum](http://wordpress.org/support/plugin/wp-humanstxt)
+
+= How can I contribute? =
+
+* [Bug reports](https://github.com/artstorm/wp-humans-txt/blob/develop/CONTRIBUTING.md#bugs)
+* [Feature requests](https://github.com/artstorm/wp-humans-txt/blob/develop/CONTRIBUTING.md#features)
+* [Pull requests](https://github.com/artstorm/wp-humans-txt/blob/develop/CONTRIBUTING.md#pull-requests)
+
+
 == Changelog ==
 
 = Version 1.0 - 5 Apr 2013 =
