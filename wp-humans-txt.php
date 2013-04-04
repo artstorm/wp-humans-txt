@@ -40,7 +40,7 @@ class WPHumansTxt
     private static $instance = false;
 
     const MIN_PHP_VERSION     = '5.2.4';
-    const MIN_WP_VERSION      = '3.0';
+    const MIN_WP_VERSION      = '3.2';
     const TEXT_DOMAIN         = 'wp-humans-txt';
     const FILE                = __FILE__;
 
