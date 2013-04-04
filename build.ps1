@@ -142,10 +142,35 @@ function arguments
     Write-Host $('-' * 80)
 }
 
+# ------------------------------------------------------------------------------
+# Check Environment
+# ------------------------------------------------------------------------------
+
+<##
+ # Checks if a function or cmdlet exists.
+ # If the command does not exist, display an error message and exit.
+ #
+ # @param  $cmdName  function or cmdlet to check.
+ # @param  $solMess  Solution message to display.
+ # @return void
+ #>
+function commandExists($cmdName, $solMess)
+{
+    if (!(Get-Command $cmdName -errorAction SilentlyContinue))
+    {
+        "Error: $cmdName does not exists!"
+        "Solution: $errMess"
+        Exit
+    } 
+}
+
+## Start checking the environment
+commandExists 'Get-GitStatus' 'Get posh-git for PowerShell.'
 
 # ------------------------------------------------------------------------------
 # Handle Arguments
 # ------------------------------------------------------------------------------
+
 switch ($args[0])
 {
     "bump" {
