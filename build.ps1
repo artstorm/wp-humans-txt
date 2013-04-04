@@ -55,6 +55,10 @@ function build_plugin
     Write-Host "Plugin successfully built! - $DATE"
 }
 
+# ------------------------------------------------------------------------------
+# Bump
+# Prepares strings for a new release. 
+# ------------------------------------------------------------------------------
 function bump($newVersion)
 {
     $oldVersion = findVersionNumber
@@ -129,6 +133,58 @@ function findVersionNumber
     return $version
 }
 
+# ------------------------------------------------------------------------------
+# SVN
+# Push a new release to the WordPress Repository
+# ------------------------------------------------------------------------------
+function svn
+{
+    "temp"
+
+    # echo -n "Version to build: "
+    # read VERSION
+
+    # echo "Ok, building version $VERSION ... "
+
+    # # Checkout SVN repo
+    # mkdir build
+    # svn co http://plugins.svn.wordpress.org/ultimate-tag-cloud-widget/tags build/tags
+
+    # # Create new tag
+    # mkdir build/tags/$VERSION
+
+    # # Base files 
+    # cp -Rv dist/* build/tags/$VERSION/
+
+    # # CSS 
+    # mkdir -v build/tags/$VERSION/css
+    # cp -v css/*.css build/tags/$VERSION/css
+
+    # # JS
+    # mkdir -v build/tags/$VERSION/js
+    # cp -v js/*.min.js build/tags/$VERSION/js
+
+    # # Pages
+    # cp -Rv pages build/tags/$VERSION/
+
+    # # PHP files
+    # cp -Rv src build/tags/$VERSION/
+
+    # # Add and commit
+    # svn add build/tags/$VERSION
+
+    # cd build/tags
+    # svn ci -m "Tagged version $VERSION"
+
+    # # Cleanup
+    # cd ../..
+    # rm -rf build
+
+    # # Git tag it
+    # # git tag -a $VERSION -m "Tagged version $VERSION"
+
+    # echo "All done! Remember to update stable tag in SVN repo"
+}
 
 # ------------------------------------------------------------------------------
 # Console Output
@@ -155,6 +211,7 @@ function arguments
 {
     Write-Host "ARGUMENTS"  -foregroundcolor "White"
     Write-Host "bump     Bumps the version number of the plugin."
+    Write-Host "svn      Push a new release to the WordPress repository."
     Write-Host $('-' * 80)
 }
 
@@ -213,6 +270,19 @@ switch ($args[0])
         # Let's display some reminders
         checklist
         break
+    }
+
+    "svn" {
+        header
+
+        # Check branch
+        $gitStatus = Get-GitStatus('.')
+        if (!$gitStatus.Branch.StartsWith('master'))
+        {
+            Write-Host "Only publish releases from the master branch..." -foregroundcolor "Red"
+            Exit
+        }
+        svn
     }
 
     default {
