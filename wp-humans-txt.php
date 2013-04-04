@@ -130,14 +130,14 @@ class WPHumansTxt
         // Check if PHP is too old
         if (version_compare(PHP_VERSION, self::MIN_PHP_VERSION, '<')) {
             // Display notice
-            add_action( 'admin_notices', array(&$this, 'phpVersionError') );
+            add_action('admin_notices', array(&$this, 'phpVersionError'));
             return false;
         }
 
         // Check if WordPress is too old
         global $wp_version;
         if (version_compare($wp_version, self::MIN_WP_VERSION, '<')) {
-            add_action( 'admin_notices', array(&$this, 'wpVersionError') );
+            add_action('admin_notices', array(&$this, 'wpVersionError'));
             return false;
         }
         return true;
