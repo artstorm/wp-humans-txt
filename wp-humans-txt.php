@@ -139,7 +139,7 @@ class WPHumansTxt
             'Your installed PHP version: %2$s',
             self::MIN_PHP_VERSION,
             PHP_VERSION,
-            get_plugin_data(self::FILE)['Name']
+            $this->getPluginName()
         );
         echo '</strong></p></div>';
     }
@@ -153,9 +153,15 @@ class WPHumansTxt
         printf(
             'Error: %2$s requires WordPress version %1$s or greater.',
             self::MIN_WP_VERSION,
-            get_plugin_data(self::FILE)['Name']
+            $this->getPluginName()
          );
         echo '</strong></p></div>';
+    }
+
+    private function getPluginName()
+    {
+        $data = get_plugin_data(self::FILE);
+        return $data['Name'];
     }
 }
 
