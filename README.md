@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/artstorm/wp-humans-txt.png?branch=develop)](https://travis-ci.org/artstorm/wp-humans-txt)
 
-WordPress Plugin to keep a snippet library of text, HTML or PHP code to be used in posts. Variables can be set for more flexibility. Inserts directly or as shortcodes.
+WordPress Plugin that generates a virtual humans.txt file according to the
+specifications at humanstxt.org.
 
 * [WordPress Repository](http://wordpress.org/extend/plugins/xxx/)
 * [Support Forum](http://wordpress.org/support/plugin/xxx)
