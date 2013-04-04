@@ -9,9 +9,7 @@ class TestTests extends WP_UnitTestCase {
 	 * Run a simple test to ensure that the tests are running
 	 */
 	 function test_tests() {
-		 
 		 $this->assertTrue( true );
-		 
 	 }
 	
 	/**
@@ -34,7 +32,5 @@ class TestTests extends WP_UnitTestCase {
 		}
 		
 		$this->assertEquals( get_bloginfo( 'version' ), $requested_version );
-	
 	}
-	
 }

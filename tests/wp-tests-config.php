@@ -30,6 +30,9 @@ if (!defined('DISABLE_WP_CRON')) {
     // define( 'DISABLE_WP_CRON', true );
 }
 
+define('WP_PLUGIN_DIR', 'D:\Dropbox\Code\WordPress');
+
+
 /* Also not interested in testing multisite for this project, so setting to false. */ 
 define( 'WP_ALLOW_MULTISITE', false );
 if ( WP_ALLOW_MULTISITE ) {

@@ -12,7 +12,7 @@
  */
 
 $GLOBALS['wp_tests_options'] = array(
-	'active_plugins' => array( 'wp-humans-txt/wp-humans-txt' ),
+	'active_plugins' => array( 'wp-humans-txt/wp-humans-txt.php' ),
 );
 
 require dirname( __FILE__ ) . '/lib/bootstrap.php';

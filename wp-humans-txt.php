@@ -67,6 +67,11 @@ class WPHumansTxt
         }
     }
 
+    public function testing()
+    {
+        return 'hello world';
+    }
+
     /**
      * PSR-0 compliant autoloader to load classes as needed.
      *
@@ -148,3 +153,6 @@ class WPHumansTxt
 }
 
 add_action('plugins_loaded', array('WPHumansTxt', 'getInstance'));
+
+
+var_dump('mupp');
