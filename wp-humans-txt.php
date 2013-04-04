@@ -32,8 +32,8 @@ spl_autoload_register('WPHumansTxt::autoload');
 /**
  * Init Singleton Class.
  *
- * @package WP humans.txt
  * @author  Johan Steen <artstorm at gmail dot com>
+ * @link     http://johansteen.se/
  */
 class WPHumansTxt
 {
