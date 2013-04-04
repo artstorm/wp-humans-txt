@@ -68,6 +68,7 @@ class WPHumansTxt
         add_action('init', array($this, 'textDomain'));
 
         new WPHumansTxt_Rewrite;
+        new WPHumansTxt_Admin;
     }
 
     /**
