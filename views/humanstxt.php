@@ -1,1 +1,2 @@
-placeholder
+<?php
+    echo $humansTxt;

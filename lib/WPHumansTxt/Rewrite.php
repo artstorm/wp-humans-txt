@@ -19,9 +19,14 @@ class WPHumansTxt_Rewrite
             '',
             home_url('humans.txt')
         );
+
         if ($humanUrl == $currentUrl) {
+            $options = get_option(WPHumansTxt::OPTION_KEY);
             header('Content-Type: text/plain; charset=utf-8');
-            echo WPHumansTxt_View::render('humanstxt');
+            $data = array(
+                'humansTxt' => $options['humanstxt']
+            );
+            echo WPHumansTxt_View::render('humanstxt', $data);
             die;
         }
     }
