@@ -1,6 +1,6 @@
 === WP humans.txt ===
 Contributors: artstorm
-Tags: humans.txt
+Tags: humans.txt, credits, humans, txt
 Requires at least: 3.2
 Tested up to: 3.5.1
 Stable tag: 0.1
