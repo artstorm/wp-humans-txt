@@ -27,7 +27,7 @@ $base = '/';
 
 /* Cron tries to make an HTTP request to the blog, which always fails, because tests are run in CLI mode only */
 if (!defined('DISABLE_WP_CRON')) {
-    define( 'DISABLE_WP_CRON', true );
+    // define( 'DISABLE_WP_CRON', true );
 }
 
 /* Also not interested in testing multisite for this project, so setting to false. */ 
