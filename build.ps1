@@ -175,12 +175,26 @@ switch ($args[0])
 {
     "bump" {
         header
+
+        # Check branch
+        $gitStatus = Get-GitStatus('.')
+        if (!$gitStatus.Branch.StartsWith('release'))
+        {
+            Write-Host "Only bump in release branches..." -foregroundcolor "Red"
+            Exit
+        }
+
+        # Set new version number
         $newVersion = Read-Host 'New version number'
         if ($newVersion -eq '') {
             Write-Host "Exited..." -foregroundcolor "Red"
             break
         }
+
+        # And bump
         bump($newVersion)
+
+        # Let's display some reminders
         checklist
         break
     }
