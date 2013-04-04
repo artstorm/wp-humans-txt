@@ -20,7 +20,8 @@ class WPHumansTxt_Rewrite
             home_url('humans.txt')
         );
         if ($humanUrl == $currentUrl) {
-            var_dump('here');
+            header('Content-Type: text/plain; charset=utf-8');
+            echo WPHumansTxt_View::render('humanstxt');
             die;
         }
     }
