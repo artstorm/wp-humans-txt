@@ -135,9 +135,12 @@ class WPHumansTxt
     {
         echo '<div class="error"><p><strong>';
         printf(
-            'Error: WP humans.txt requires PHP version %1$s or greater.<br/>'.
+            'Error: %3$s requires PHP version %1$s or greater.<br/>'.
             'Your installed PHP version: %2$s',
-            self::MIN_PHP_VERSION, PHP_VERSION);
+            self::MIN_PHP_VERSION,
+            PHP_VERSION,
+            get_plugin_data(self::FILE)['Name']
+        );
         echo '</strong></p></div>';
     }
 
@@ -148,8 +151,10 @@ class WPHumansTxt
     {
         echo '<div class="error"><p><strong>';
         printf(
-            'Error: WP humans.txt requires WordPress version %s or greater.',
-            self::MIN_WP_VERSION );
+            'Error: %2$s requires WordPress version %1$s or greater.',
+            self::MIN_WP_VERSION,
+            get_plugin_data(self::FILE)['Name']
+         );
         echo '</strong></p></div>';
     }
 }
