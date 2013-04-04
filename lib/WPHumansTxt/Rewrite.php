@@ -5,7 +5,7 @@
  * @author   Johan Steen <artstorm at gmail dot com>
  * @link     http://johansteen.se/
  */
-class WPHumansTxt_Generate
+class WPHumansTxt_Rewrite
 {
     public function __construct() {
         add_action('template_redirect', array(&$this, 'redirect'), 1);

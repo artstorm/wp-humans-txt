@@ -65,6 +65,8 @@ class WPHumansTxt
         if (!$this->testHost()) {
             return;
         }
+
+        new WPHumansTxt_Rewrite;
     }
 
     public function testing()
