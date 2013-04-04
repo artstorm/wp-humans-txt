@@ -11,5 +11,5 @@ WordPress Plugin to kKeep a snippet library of text, HTML or PHP code to be used
 
 
 Contribute
-==========
+----------
 I'm very interested in your contributions. What else deserves to be in this plugin? How can it be improved? Developers, feel free to fork the repository, make any updates and then send me a pull request. Non-developers, submit a request in the issue tracker.
