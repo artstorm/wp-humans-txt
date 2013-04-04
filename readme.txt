@@ -10,6 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Generates a virtual humans.txt file according to the specifications at 
 humanstxt.org.
 
+
 == Description ==
 
 The plugin generates a virtual humans.txt file according to the specifications
