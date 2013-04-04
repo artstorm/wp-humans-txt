@@ -11,8 +11,17 @@ Generates a virtual humans.txt file according to the specifications at
 humanstxt.org.
 
 == Description ==
-TEMP DESCRIPTION
 
-Follows the "standard" precisely.
-Outputs it as plain text, with utf-8 encoding
-the editor allows tab key.
+The plugin generates a virtual humans.txt file according to the specifications
+at humanstxt.org. The virtual file is located at domain.com/humans.txt.
+
+=== Features ===
+
+* Provides an editor within WordPress admin to edit the humans.txt 'file'.
+* Outputs the file as plain text, with utf-8 encoding.
+* The editor allows the usage of the tab key for convenient editing.
+
+== Changelog ==
+
+= Version 1.0 - 5 Apr 2013 =
+ * Initial Release
