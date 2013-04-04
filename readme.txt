@@ -7,8 +7,10 @@ Stable tag: 0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Generates a virtual humans.txt file according to the specifications at 
+humanstxt.org.
 
-
+== Description ==
 TEMP DESCRIPTION
 
 Follows the "standard" precisely.
