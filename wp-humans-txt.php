@@ -67,6 +67,7 @@ class WPHumansTxt
             return;
         }
         add_action('init', array($this, 'textDomain'));
+        register_uninstall_hook(__FILE__, array(__CLASS__, 'uninstall'));
 
         new WPHumansTxt_Rewrite;
         new WPHumansTxt_Admin;
@@ -118,6 +119,15 @@ class WPHumansTxt
             dirname(plugin_basename(__FILE__)).'/lang/'
         );
     }
+
+    /**
+     * Fired when the plugin is uninstalled.
+     */
+    public function uninstall()
+    {
+        delete_option(self::OPTION_KEY);
+    }
+
 
     // -------------------------------------------------------------------------
     // Environment Checks
