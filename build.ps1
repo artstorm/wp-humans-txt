@@ -65,11 +65,16 @@ function bump($newVersion)
     # Let's have some dots printed out. Makes it old skool
     for ($ctr = 0; $ctr -lt 3; $ctr++) {
         Write-Host "." -noNewLine
-        sleep(1)
+        sleep -Milliseconds 500
     }
+    Write-Host "."
 
     findReplaceFile $PLUGIN_FILE "Version: $oldVersion" "Version: $newVersion"
+    bumpMessage $PLUGIN_FILE": bumped Version $oldVersion to $newVersion"
     findReplaceFile 'readme.txt' "Stable tag: $oldVersion" "Stable tag: $newVersion"
+    bumpMessage "readme.txt: bumped Stable Tag $oldVersion to $newVersion"
+    findReplaceFile 'README.md' "\?branch=develop" "?branch=master"
+    bumpMessage "README.md: Changed Travis CI badge from develop to master branch"
 
     Write-Host "Done!"
     Write-Host $('-' * 80)
@@ -86,6 +91,12 @@ function findReplaceFile($file, $old, $new)
     # Copy and clean up
     cp "$($file).tmp" $file
     Remove-Item "$($file).tmp"
+}
+
+function bumpMessage($message)
+{
+    Write-Host "- $message" -foregroundcolor "DarkGray"
+    sleep -Milliseconds 500
 }
 
 function correctEncoding($file)
