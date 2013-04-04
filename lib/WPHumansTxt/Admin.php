@@ -49,6 +49,4 @@ class WPHumansTxt_Admin
 
         update_option(WPHumansTxt::OPTION_KEY, $options);
     }
-
-
 }
