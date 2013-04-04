@@ -153,6 +153,3 @@ class WPHumansTxt
 }
 
 add_action('plugins_loaded', array('WPHumansTxt', 'getInstance'));
-
-
-var_dump('mupp');
