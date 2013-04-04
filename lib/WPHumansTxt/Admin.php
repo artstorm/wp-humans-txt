@@ -10,6 +10,7 @@ class WPHumansTxt_Admin
     public function __construct()
     {
         add_action('admin_menu', array($this, 'menu'));
+        add_action('admin_enqueue_scripts', array($this, 'scripts'));
     }
 
     /**
@@ -40,6 +41,35 @@ class WPHumansTxt_Admin
         );
         echo WPHumansTxt_View::render('admin', $data);
     }
+
+    /**
+     * Load CSS and JS on the settings page.
+     */
+    public function scripts($hook)
+    {
+        if ($hook != 'settings_page_wp-humans-txt/wp-humans-txt') {
+            return;
+        }
+        $plugin = get_plugin_data(WPHumansTxt::FILE, false, false);
+        $version = $plugin['Version'];
+
+        // wp_register_style(
+        //     'wp-humans-txt',
+        //     plugins_url('assets/tabs.css', WPHumansTxt::FILE),
+        //     array(),
+        //     $version
+        // );
+        // wp_enqueue_style('wp-humans-txt');
+
+        wp_enqueue_script(
+            'wp-humans-txt',
+            plugins_url('assets/tab-handler.js', WPHumansTxt::FILE),
+            array('jquery'),
+            $version,
+            false
+        );
+    }
+
 
     private function update()
     {
