@@ -1,5 +1,6 @@
 === WP humans.txt ===
 Contributors: artstorm
+Donate link: http://johansteen.se/donate/
 Tags: humans.txt, credits, humans, txt
 Requires at least: 3.2
 Tested up to: 3.5.1
