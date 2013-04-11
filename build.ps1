@@ -85,6 +85,10 @@ function bump($newVersion)
 
     Write-Host "Done!"
     Write-Host $('-' * 80)
+
+    Write-Host "Changes since v$oldVersion"
+    git log $oldVersion`..HEAD --oneline
+    Write-Host $('-' * 80)
 }
 
 function findReplaceFile($file, $old, $new)
