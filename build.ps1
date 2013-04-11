@@ -165,7 +165,7 @@ function svn
 
     # # Cleanup
     cd ../..
-    rm build
+    rm build -Recurse
 
     # Git tag it
     git tag -a $version -m "Tagged version $version"
