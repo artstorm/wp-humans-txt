@@ -139,51 +139,38 @@ function findVersionNumber
 # ------------------------------------------------------------------------------
 function svn
 {
-    "temp"
+    $version = findVersionNumber
 
-    # echo -n "Version to build: "
-    # read VERSION
+    Write-Host "Version to build: $version"
+    # Checkout SVN repo
+    svn.exe co http://plugins.svn.wordpress.org/wp-humanstxt/tags/ build/tags
 
-    # echo "Ok, building version $VERSION ... "
+    # Create new tag
+    mkdir build/tags/$version
 
-    # # Checkout SVN repo
-    # mkdir build
-    # svn co http://plugins.svn.wordpress.org/ultimate-tag-cloud-widget/tags build/tags
+    # Copy files
+    cp wp-humans-txt.php build/tags/$version/
+    cp readme.txt build/tags/$version/
 
-    # # Create new tag
-    # mkdir build/tags/$VERSION
-
-    # # Base files 
-    # cp -Rv dist/* build/tags/$VERSION/
-
-    # # CSS 
-    # mkdir -v build/tags/$VERSION/css
-    # cp -v css/*.css build/tags/$VERSION/css
-
-    # # JS
-    # mkdir -v build/tags/$VERSION/js
-    # cp -v js/*.min.js build/tags/$VERSION/js
-
-    # # Pages
-    # cp -Rv pages build/tags/$VERSION/
-
-    # # PHP files
-    # cp -Rv src build/tags/$VERSION/
+    cp assets/ -Destination build/tags/$version/assets/ -Recurse
+    cp lang/   -Destination build/tags/$version/lang/   -Recurse
+    cp lib/    -Destination build/tags/$version/lib/    -Recurse
+    cp views/  -Destination build/tags/$version/views/  -Recurse
 
     # # Add and commit
-    # svn add build/tags/$VERSION
+    svn.exe add build/tags/$version
 
-    # cd build/tags
-    # svn ci -m "Tagged version $VERSION"
+    cd build/tags
+    svn.exe ci -m "Tagged version $version"
 
     # # Cleanup
-    # cd ../..
-    # rm -rf build
+    cd ../..
+    rm build
 
-    # # Git tag it
-    # # git tag -a $VERSION -m "Tagged version $VERSION"
+    # Git tag it
+    git tag -a $version -m "Tagged version $version"
 
-    # echo "All done! Remember to update stable tag in SVN repo"
+    echo "All done! Remember to update stable tag in SVN repo"
 }
 
 # ------------------------------------------------------------------------------
@@ -277,11 +264,11 @@ switch ($args[0])
 
         # Check branch
         $gitStatus = Get-GitStatus('.')
-        if (!$gitStatus.Branch.StartsWith('master'))
-        {
-            Write-Host "Only publish releases from the master branch..." -foregroundcolor "Red"
-            Exit
-        }
+        # if (!$gitStatus.Branch.StartsWith('master'))
+        # {
+        #     Write-Host "Only publish releases from the master branch..." -foregroundcolor "Red"
+        #     Exit
+        # }
         svn
     }
 
