@@ -83,7 +83,15 @@ function bump($newVersion)
     # findReplaceFile 'README.md' "\?branch=develop" "?branch=master"
     # bumpMessage "README.md: Changed Travis CI badge from develop to master branch"
 
+    bumpMessage "pot file: Updating..."
+    xgettext -o lang/wp-humans-txt.pot -L php --keyword=_e --keyword=__  `
+    *.php views/*.php lib/WPHumansTxt/*.php
+
     Write-Host "Done!"
+    Write-Host $('-' * 80)
+
+    Write-Host "Changes since v$oldVersion"
+    git log $oldVersion`..HEAD --oneline
     Write-Host $('-' * 80)
 }
 
@@ -103,7 +111,7 @@ function findReplaceFile($file, $old, $new)
 function bumpMessage($message)
 {
     Write-Host "- $message" -foregroundcolor "DarkGray"
-    sleep -Milliseconds 500
+    sleep -Milliseconds 250
 }
 
 function correctEncoding($file)
@@ -191,7 +199,6 @@ function checklist
 {
     Write-Host "CHECKLIST"  -foregroundcolor "Red"
     Write-Host "Before tagging the new release"
-    Write-Host "* Update .pot file." -foregroundcolor "White"
     Write-Host "* Update changelog." -foregroundcolor "White"
     Write-Host "* Run unit tests." -foregroundcolor "White"
     Write-Host $('-' * 80)

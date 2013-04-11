@@ -4,7 +4,7 @@ Donate link: http://johansteen.se/donate/
 Tags: humans.txt, credits, humans, txt
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 0.1
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,5 +69,9 @@ take a moment to review the guidelines for contributing.
 
 == Changelog ==
 
+= Version 0.2 - 11 Apr 2013 =
+ * Adds check so WordPress is properly configured for permalink rewrites.
+ * Adds help documentation within the plugin admin.
+
 = Version 0.1 - 11 Apr 2013 =
- * Initial Release
+ * Initial Release.
