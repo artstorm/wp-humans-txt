@@ -71,6 +71,7 @@ class WPHumansTxt
 
         new WPHumansTxt_Rewrite;
         new WPHumansTxt_Admin;
+        new WPHumansTxt_Help;
     }
 
     /**
