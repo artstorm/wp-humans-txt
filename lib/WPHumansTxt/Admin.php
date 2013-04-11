@@ -18,13 +18,15 @@ class WPHumansTxt_Admin
      */
     public function menu()
     {
-        add_options_page(
+        $page = add_options_page(
             'WP humans.txt '.__('Options', WPHumansTxt::TEXT_DOMAIN),
             'WP humans.txt',
             'administrator',
             plugin_basename(WPHumansTxt::FILE),
             array($this, 'renderpage')
         );
+
+        new WPHumansTxt_Help($page);
     }
 
     public function renderpage()

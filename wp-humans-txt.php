@@ -5,7 +5,7 @@ Plugin URI: http://johansteen.se/code/wp-humans-txt/
 Description: Generates a virtual humans.txt file according to the specifications at <a href="http://humanstxt.org/">humanstxt.org</a>.
 Author: Johan Steen
 Author URI: http://johansteen.se/
-Version: 0.1
+Version: 0.2
 License: GPLv2 or later
 Text Domain: wp-humans-txt
 
@@ -40,7 +40,7 @@ class WPHumansTxt
     private static $instance = false;
 
     const MIN_PHP_VERSION     = '5.2.4';
-    const MIN_WP_VERSION      = '3.2';
+    const MIN_WP_VERSION      = '3.3';
     const TEXT_DOMAIN         = 'wp-humans-txt';
     const OPTION_KEY          = 'wp_humans_txt';
     const FILE                = __FILE__;
@@ -64,6 +64,9 @@ class WPHumansTxt
     private function __construct()
     {
         if (!$this->testHost()) {
+            return;
+        }
+        if (!$this->testPermalinks()) {
             return;
         }
         add_action('init', array($this, 'textDomain'));
@@ -126,6 +129,26 @@ class WPHumansTxt
     public function uninstall()
     {
         delete_option(self::OPTION_KEY);
+    }
+
+    /**
+     * Checks so WordPress is properly configured for this plugin.
+     */
+    private function testPermalinks()
+    {
+        if (!get_option('permalink_structure')) {
+            add_action(
+                'admin_notices',
+                 array(&$this, 'permalinkNotice')
+            );
+            return false;
+        }
+        return true;
+    }
+
+    public function permalinkNotice()
+    {
+        echo WPHumansTxt_View::render('notice_permalink');
     }
 
 

@@ -77,10 +77,21 @@ function bump($newVersion)
     bumpMessage $PLUGIN_FILE": bumped Version $oldVersion to $newVersion"
     findReplaceFile 'readme.txt' "Stable tag: $oldVersion" "Stable tag: $newVersion"
     bumpMessage "readme.txt: bumped Stable Tag $oldVersion to $newVersion"
-    findReplaceFile 'README.md' "\?branch=develop" "?branch=master"
-    bumpMessage "README.md: Changed Travis CI badge from develop to master branch"
+    # For now, I keep the master branch readme pointing to develop...
+    # So I don't forget to change it back after a release. Revise if I come up
+    # with a better method to handle this during a release.
+    # findReplaceFile 'README.md' "\?branch=develop" "?branch=master"
+    # bumpMessage "README.md: Changed Travis CI badge from develop to master branch"
+
+    bumpMessage "pot file: Updating..."
+    xgettext -o lang/wp-humans-txt.pot -L php --keyword=_e --keyword=__  `
+    *.php views/*.php lib/WPHumansTxt/*.php
 
     Write-Host "Done!"
+    Write-Host $('-' * 80)
+
+    Write-Host "Changes since v$oldVersion"
+    git log $oldVersion`..HEAD --oneline
     Write-Host $('-' * 80)
 }
 
@@ -100,7 +111,7 @@ function findReplaceFile($file, $old, $new)
 function bumpMessage($message)
 {
     Write-Host "- $message" -foregroundcolor "DarkGray"
-    sleep -Milliseconds 500
+    sleep -Milliseconds 250
 }
 
 function correctEncoding($file)
@@ -165,7 +176,7 @@ function svn
 
     # # Cleanup
     cd ../..
-    rm build
+    rm build -Recurse
 
     # Git tag it
     git tag -a $version -m "Tagged version $version"
@@ -188,7 +199,6 @@ function checklist
 {
     Write-Host "CHECKLIST"  -foregroundcolor "Red"
     Write-Host "Before tagging the new release"
-    Write-Host "* Update .pot file." -foregroundcolor "White"
     Write-Host "* Update changelog." -foregroundcolor "White"
     Write-Host "* Run unit tests." -foregroundcolor "White"
     Write-Host $('-' * 80)
@@ -264,11 +274,11 @@ switch ($args[0])
 
         # Check branch
         $gitStatus = Get-GitStatus('.')
-        # if (!$gitStatus.Branch.StartsWith('master'))
-        # {
-        #     Write-Host "Only publish releases from the master branch..." -foregroundcolor "Red"
-        #     Exit
-        # }
+        if (!$gitStatus.Branch.StartsWith('master')) {
+            Write-Host "Only publish releases from the master branch..." `
+                -foregroundcolor "Red"
+            Exit
+        }
         svn
     }
 
