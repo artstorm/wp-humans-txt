@@ -55,15 +55,13 @@ at humanstxt.org. The virtual file is located at domain.com/humans.txt.
 = Where can I get support? =
 
 This is a free plugin, so support is not guaranteed. Post your question in the
-support forum and help might be provided by the developer or by the community.
-
+support forum and help might be provided by the developer or by the community.  
 [Support Forum](http://wordpress.org/support/plugin/wp-humanstxt)
 
 = How can I contribute? =
 
 You can contribute with Bug Reports, Feature Requests or Pull Requests. Please
-take a moment to review the guidelines for contributing.
-
+take a moment to review the guidelines for contributing.  
 [Guidelines](https://github.com/artstorm/wp-humans-txt/blob/develop/CONTRIBUTING.md)
 
 
