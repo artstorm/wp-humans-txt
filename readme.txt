@@ -69,5 +69,5 @@ take a moment to review the guidelines for contributing.
 
 == Changelog ==
 
-= Version 1.0 - 5 Apr 2013 =
+= Version 0.1 - 11 Apr 2013 =
  * Initial Release
