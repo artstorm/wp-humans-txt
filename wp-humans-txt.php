@@ -66,6 +66,9 @@ class WPHumansTxt
         if (!$this->testHost()) {
             return;
         }
+        if (!$this->testPermalinks()) {
+            return;
+        }
         add_action('init', array($this, 'textDomain'));
         register_uninstall_hook(__FILE__, array(__CLASS__, 'uninstall'));
 
@@ -128,6 +131,16 @@ class WPHumansTxt
         delete_option(self::OPTION_KEY);
     }
 
+    /**
+     * Checks so WordPress is properly configured for this plugin.
+     */
+    private function testPermalinks()
+    {
+        if (!get_option('permalink_structure')) {
+            return false;
+        }
+        return true;
+    }
 
     // -------------------------------------------------------------------------
     // Environment Checks
