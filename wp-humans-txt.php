@@ -137,10 +137,20 @@ class WPHumansTxt
     private function testPermalinks()
     {
         if (!get_option('permalink_structure')) {
+            add_action(
+                'admin_notices',
+                 array(&$this, 'permalinkNotice')
+            );
             return false;
         }
         return true;
     }
+
+    public function permalinkNotice()
+    {
+        echo WPHumansTxt_View::render('notice_permalink');
+    }
+
 
     // -------------------------------------------------------------------------
     // Environment Checks
