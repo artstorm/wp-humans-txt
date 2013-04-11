@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP humans.txt
-Plugin URI:
+Plugin URI: http://johansteen.se/code/wp-humans-txt/
 Description: Generates a virtual humans.txt file according to the specifications at <a href="http://humanstxt.org/">humanstxt.org</a>.
 Author: Johan Steen
 Author URI: http://johansteen.se/
