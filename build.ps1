@@ -264,11 +264,11 @@ switch ($args[0])
 
         # Check branch
         $gitStatus = Get-GitStatus('.')
-        # if (!$gitStatus.Branch.StartsWith('master'))
-        # {
-        #     Write-Host "Only publish releases from the master branch..." -foregroundcolor "Red"
-        #     Exit
-        # }
+        if (!$gitStatus.Branch.StartsWith('master')) {
+            Write-Host "Only publish releases from the master branch..." `
+                -foregroundcolor "Red"
+            Exit
+        }
         svn
     }
 
