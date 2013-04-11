@@ -2,7 +2,7 @@
 Contributors: artstorm
 Donate link: http://johansteen.se/donate/
 Tags: humans.txt, credits, humans, txt
-Requires at least: 3.2
+Requires at least: 3.3
 Tested up to: 3.5.1
 Stable tag: 0.1
 License: GPLv2 or later
