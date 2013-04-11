@@ -20,9 +20,10 @@ at humanstxt.org. The virtual file is located at domain.com/humans.txt.
 = Features =
 
 * Provides an editor within WordPress admin to edit the humans.txt 'file'.
-* Outputs the file as plain text, with utf-8 encoding.
+* Outputs as plain text, with utf-8 encoding.
 * The editor allows the usage of the tab key for convenient editing.
 * Uses WordPress' system for on screen help documentation.
+* Generates a virtual humans.txt, no physical file is created on disk.
 
 = Related Links =
 
