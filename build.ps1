@@ -77,8 +77,11 @@ function bump($newVersion)
     bumpMessage $PLUGIN_FILE": bumped Version $oldVersion to $newVersion"
     findReplaceFile 'readme.txt' "Stable tag: $oldVersion" "Stable tag: $newVersion"
     bumpMessage "readme.txt: bumped Stable Tag $oldVersion to $newVersion"
-    findReplaceFile 'README.md' "\?branch=develop" "?branch=master"
-    bumpMessage "README.md: Changed Travis CI badge from develop to master branch"
+    # For now, I keep the master branch readme pointing to develop...
+    # So I don't forget to change it back after a release. Revise if I come up
+    # with a better method to handle this during a release.
+    # findReplaceFile 'README.md' "\?branch=develop" "?branch=master"
+    # bumpMessage "README.md: Changed Travis CI badge from develop to master branch"
 
     Write-Host "Done!"
     Write-Host $('-' * 80)
