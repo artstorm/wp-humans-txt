@@ -1,6 +1,8 @@
 <!-- Create a header in the default WordPress 'wrap' container -->
 <div class="wrap">
-    <div id="icon-plugins" class="icon32"></div>
+    <div id="icon-wphumanstxt" style="background: url(<?php
+        echo '';
+        ?>images/shuriken-32.png) no-repeat;" class="icon32"></div>
     <h2>WP humans.txt</h2>
 
     <form method="post" action="">
