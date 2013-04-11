@@ -23,6 +23,14 @@ at humanstxt.org. The virtual file is located at domain.com/humans.txt.
 * Outputs the file as plain text, with utf-8 encoding.
 * The editor allows the usage of the tab key for convenient editing.
 
+= Related Links =
+
+* [Documentation](http://johansteen.se/code/wp-humans-txt/ 
+  "Complete usage instructions")
+* [Support Forum](http://wordpress.org/support/plugin/wp-humanstxt 
+  "Use this for support and feature requests")
+* [GitHub](https://github.com/artstorm/wp-humans-txt 
+  "Contribute to the plugin")
 
 == Installation ==
 
