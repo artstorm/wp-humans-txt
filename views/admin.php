@@ -9,7 +9,9 @@
         ?>
 
         <h3>humans.txt</h3>
-        <p><label for="humanstxt">Enter your humans.txt below.</label></p>
+        <p><label for="humanstxt"><?php
+            _e('Enter your humans.txt below.', WPHumansTxt::TEXT_DOMAIN);
+        ?></label></p>
         <textarea name="humanstxt" id="humanstxt" class="code" cols="80"
             rows="20"><?php
             echo $options['humanstxt'];
