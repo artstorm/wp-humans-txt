@@ -4,7 +4,7 @@ Donate link: http://johansteen.se/donate/
 Tags: humans.txt, credits, humans, txt
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 0.1
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
