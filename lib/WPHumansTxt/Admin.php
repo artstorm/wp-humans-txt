@@ -76,7 +76,8 @@ class WPHumansTxt_Admin
     private function update()
     {
         $options = array(
-            'humanstxt' => $_POST['humanstxt']
+            'humanstxt'   => $_POST['humanstxt'],
+            'author_link' => $_POST['author_link'],
         );
 
         update_option(WPHumansTxt::OPTION_KEY, $options);
