@@ -27,7 +27,7 @@ plugin is fast, lightweight and straightforward to use.
 * Outputs as plain text, with utf-8 encoding.
 * The editor allows the usage of the tab key for convenient editing.
 * Uses WordPress' system for on screen help documentation.
-* Cleans up after itself on uninstall.
+* Clean uninstall.
 
 = Related Links =
 
