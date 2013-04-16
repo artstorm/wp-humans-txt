@@ -194,6 +194,37 @@ function svn
 }
 
 # ------------------------------------------------------------------------------
+# Assets
+# Update the assets in the WordPress Repository
+# ------------------------------------------------------------------------------
+function assets
+{
+    Write-Host "Checking out assets folder..."
+    svn.exe co http://plugins.svn.wordpress.org/wp-humanstxt/assets/ build
+    if (!$LastExitCode -eq 0) {
+        Write-Host "Error! Could not checkout the assets. Exiting." -foregroundcolor "Red"
+        Exit
+    }
+
+    Write-Host "Updating screenshots..."
+    Remove-Item build/screenshot-*.*
+    Copy-Item repo/screenshot-*.* build/
+
+    Write-Host "Commiting the assets folder..."
+    svn.exe add build/*.jpg
+    cd build
+    svn.exe ci -m "Updates repository assets."
+    if (!$LastExitCode -eq 0) {
+        Write-Host "Error! Could not commit the assets. Exiting." -foregroundcolor "Red"
+        Exit
+    }
+
+    cd ..
+    Remove-Item build -Recurse -Force
+    Write-Host "All done!"
+}
+
+# ------------------------------------------------------------------------------
 # Console Output
 # ------------------------------------------------------------------------------
 function header
@@ -218,6 +249,7 @@ function arguments
     Write-Host "ARGUMENTS"  -foregroundcolor "White"
     Write-Host "bump     Bumps the version number of the plugin."
     Write-Host "svn      Push a new release to the WordPress repository."
+    Write-Host "assets   Updates the assets in the WordPress repository."
     Write-Host $('-' * 80)
 }
 
@@ -289,6 +321,12 @@ switch ($args[0])
             Exit
         }
         svn
+    }
+
+
+    "assets" {
+        header
+        assets
     }
 
     default {
