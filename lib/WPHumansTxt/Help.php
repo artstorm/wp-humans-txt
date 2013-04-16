@@ -7,38 +7,70 @@
  */
 class WPHumansTxt_Help
 {
-	public function __construct($optionPage)
-	{
-		add_action('load-'.$optionPage, array(&$this,'addHelpTabs'));
-	}
+    public function __construct($optionPage)
+    {
+        add_action('load-'.$optionPage, array(&$this,'addHelpTabs'));
+    }
 
-	/**
-	 * Setup the help tabs and sidebar.
-	 */
-	public function addHelpTabs()
-	{
-		$screen = get_current_screen();
-		$screen->set_help_sidebar($this->helpSidebar());
-		$screen->add_help_tab(array(
-			'id'      => 'basic-plugin-help',
-			'title'   => __('Basic', WPHumansTxt::TEXT_DOMAIN),
-			'content' => $this->help_basic()
-		));
-	}
+    /**
+     * Setup the help tabs and sidebar.
+     */
+    public function addHelpTabs()
+    {
+        $screen = get_current_screen();
+        $screen->set_help_sidebar($this->helpSidebar());
+        $screen->add_help_tab(
+            array(
+            'id'      => 'intro-plugin-help',
+            'title'   => __('Introduction', WPHumansTxt::TEXT_DOMAIN),
+            'content' => $this->helpIntro()
+            )
+        );
+        $screen->add_help_tab(
+            array(
+            'id'      => 'usage-plugin-help',
+            'title'   => __('Usage', WPHumansTxt::TEXT_DOMAIN),
+            'content' => $this->helpUsage()
+            )
+        );
+        $screen->add_help_tab(
+            array(
+            'id'      => 'examples-plugin-help',
+            'title'   => __('Examples', WPHumansTxt::TEXT_DOMAIN),
+            'content' => $this->helpExamples()
+            )
+        );
+    }
 
-	/**
-	 * The right sidebar help text.
-	 */
-	public function helpSidebar()
-	{
-		return WPHumansTxt_View::render('help_sidebar');
-	}
+    /**
+     * The right sidebar help text.
+     */
+    public function helpSidebar()
+    {
+        return WPHumansTxt_View::render('help_sidebar');
+    }
 
-	/**
-	 * The basic help tab.
-	 */
-	public function help_basic()
-	{
-		return WPHumansTxt_View::render('help_basic');
-	}
+    /**
+     * The introduction help tab.
+     */
+    public function helpIntro()
+    {
+        return WPHumansTxt_View::render('help_intro');
+    }
+
+    /**
+     * The usage help tab.
+     */
+    public function helpUsage()
+    {
+        return WPHumansTxt_View::render('help_usage');
+    }
+
+    /**
+     * The usage help tab.
+     */
+    public function helpExamples()
+    {
+        return WPHumansTxt_View::render('help_examples');
+    }
 }

@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: WP humans.txt
+Plugin Name: WP Humans.txt
 Plugin URI: http://johansteen.se/code/wp-humans-txt/
 Description: Generates a virtual humans.txt file according to the specifications at <a href="http://humanstxt.org/">humanstxt.org</a>.
 Author: Johan Steen
 Author URI: http://johansteen.se/
-Version: 0.3
+Version: 1.0
 License: GPLv2 or later
 Text Domain: wp-humans-txt
 
@@ -204,7 +204,7 @@ class WPHumansTxt
             'Error: %2$s requires WordPress version %1$s or greater.',
             self::MIN_WP_VERSION,
             $this->getPluginName()
-         );
+        );
         echo '</strong></p></div>';
     }
 

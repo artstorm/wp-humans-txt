@@ -1,7 +1,7 @@
 <div class="error">
     <p>
     <?php
-        _e('WP humans.txt needs WordPress to be configured with a permalink
+        _e('WP Humans.txt needs WordPress to be configured with a permalink
             structure other than the default to work properly.',
             WPHumansTxt::TEXT_DOMAIN
         );

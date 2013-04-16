@@ -17,7 +17,10 @@ class WPHumansTxt_Links
     {
         $options = get_option(WPHumansTxt::OPTION_KEY);
         if ($options['author_link']) {
-            printf("<link rel='author' href='%s' />\n", home_url('humans.txt'));
+            printf(
+                "<link type='text/plain' rel='author' href='%s' />\n",
+                home_url('humans.txt')
+            );
         }
     }
 

@@ -3,21 +3,30 @@
     <div id="icon-wphumanstxt" style="background: url(<?php
         echo plugin_dir_url(WPHumansTxt::FILE);
         ?>assets/admin-icon-32.png) no-repeat;" class="icon32"></div>
-    <h2>WP humans.txt</h2>
+    <h2>WP Humans.txt</h2>
 
     <form method="post" action="">
         <?php
         wp_nonce_field('wp_humans_txt', 'wp_humans_txt_nonce');
         ?>
 
-        <h3>humans.txt</h3>
-        <p><label for="humanstxt"><?php
-            _e('Enter your humans.txt below.', WPHumansTxt::TEXT_DOMAIN);
-        ?></label></p>
+        <h3>Humans.txt</h3>
+        <p>
+            <label for="humanstxt"><?php
+            _e('Enter your humans.txt below. Use the help button above for further guidance.', WPHumansTxt::TEXT_DOMAIN);
+            ?></label>
+            <a href='<?php echo home_url('humans.txt'); ?>' class='button button-small'>
+            <?php _e('View', WPHumansTxt::TEXT_DOMAIN); ?> humans.txt</a>
+        </p>
         <textarea name="humanstxt" id="humanstxt" class="code" cols="80"
             rows="20"><?php
             echo $options['humanstxt'];
         ?></textarea>
+        <p>
+        <a id="insert_base_template" class="button"><?php
+            _e('Insert Base Template', WPHumansTxt::TEXT_DOMAIN);
+        ?></a>
+        </p>
 
         <h3><?php _e('Options', WPHumansTxt::TEXT_DOMAIN); ?></h3>
 

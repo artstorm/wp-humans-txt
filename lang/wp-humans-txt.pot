@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-16 15:26+0700\n"
+"POT-Creation-Date: 2013-04-16 17:53+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,28 +16,114 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: views/admin.php:15
-msgid "Enter your humans.txt below."
+#: views/admin.php:16
+msgid ""
+"Enter your humans.txt below. Use the help button above for further guidance."
 msgstr ""
 
-#: views/admin.php:22 lib/WPHumansTxt/Admin.php:22
+#: views/admin.php:19
+msgid "View"
+msgstr ""
+
+#: views/admin.php:27
+msgid "Insert Base Template"
+msgstr ""
+
+#: views/admin.php:31 views/help_usage.php:15 lib/WPHumansTxt/Admin.php:22
 msgid "Options"
 msgstr ""
 
-#: views/admin.php:26
+#: views/admin.php:35
 msgid "Author link"
 msgstr ""
 
-#: views/admin.php:29
+#: views/admin.php:38
 msgid "Place an author link to the file within the head of the site."
 msgstr ""
 
-#: views/admin.php:36
+#: views/admin.php:45
 msgid "Humans.txt button"
 msgstr ""
 
-#: views/admin.php:48
+#: views/admin.php:57
 msgid "Add a button to the footer, which links to the humans.txt file."
+msgstr ""
+
+#: views/help_examples.php:1
+msgid "The humans"
+msgstr ""
+
+#: views/help_examples.php:3
+msgid ""
+"\n"
+"Include the following information about every human involved in the project: "
+"role, name, contact, twitter, geolocation, etc. Please be aware that you may "
+"have to deal with spam if you include email adresses.\n"
+msgstr ""
+
+#: views/help_examples.php:9
+msgid "Additional"
+msgstr ""
+
+#: views/help_examples.php:11
+msgid ""
+"\n"
+"You can also include additional information about the site, such as the date "
+"of the last update (YYYY/MM/DD), its main language, its Doctype and other "
+"components, tools and software used on the development.\n"
+msgstr ""
+
+#: views/help_examples.php:17
+msgid "The standard"
+msgstr ""
+
+#: views/help_examples.php:20
+#, php-format
+msgid ""
+"\n"
+"Visit %s quick start to read more about what to include and the standard.\n"
+msgstr ""
+
+#: views/help_examples.php:28
+msgid "Example"
+msgstr ""
+
+#: views/help_intro.php:1 lib/WPHumansTxt/Help.php:25
+msgid "Introduction"
+msgstr ""
+
+#: views/help_intro.php:3
+msgid ""
+"\n"
+"Having a humans.txt file is an initiative for knowing the people behind a "
+"website. It's the file that contains information about the different people "
+"who have contributed to building the website.\n"
+msgstr ""
+
+#: views/help_intro.php:9
+msgid "Who to mention"
+msgstr ""
+
+#: views/help_intro.php:11
+msgid ""
+"\n"
+"Whoever you want to, provided they wish you to do so. You can mention the "
+"developer, the designer, the copywriter, the webmaster, the SEO, SEM or "
+"SMO...\n"
+"As you can see, the number of people who may take part of the creation of a "
+"site can be big, so the list is almost endless.\n"
+msgstr ""
+
+#: views/help_intro.php:18
+msgid "Learn more"
+msgstr ""
+
+#: views/help_intro.php:21
+#, php-format
+msgid ""
+"\n"
+"Visit %s to read more about what to include and how to treat the humans.txt "
+"file.\n"
 msgstr ""
 
 #: views/help_sidebar.php:2
@@ -56,9 +142,49 @@ msgstr ""
 msgid "GitHub Contribution"
 msgstr ""
 
+#: views/help_usage.php:3
+msgid ""
+"\n"
+"Use this textarea to enter the humans.txt information. See the examples "
+"help\n"
+"section for what to include. You can also use the insert base template "
+"button\n"
+"to get a default humans.txt inserted, that you can use as a starting point "
+"and\n"
+"change into your own.\n"
+"\n"
+"The view humans.txt button let's you quickly see what your current live \n"
+"humans.txt file looks like.\n"
+msgstr ""
+
+#: views/help_usage.php:16
+msgid "Author Link"
+msgstr ""
+
+#: views/help_usage.php:18
+msgid ""
+"\n"
+"Enabling this option, inserts a meta tag within the HTML head section that "
+"links\n"
+"to the humans.txt file. It's a rel author link tag that is inserted.\n"
+msgstr ""
+
+#: views/help_usage.php:25
+msgid "humans.txt button"
+msgstr ""
+
+#: views/help_usage.php:27
+msgid ""
+"\n"
+"    Enabling this option allows you to choose one of four buttons that will "
+"be\n"
+"    inserted in the wp_footer section. The button links to the humans.txt "
+"file.\n"
+msgstr ""
+
 #: views/notice_permalink.php:4
 msgid ""
-"WP humans.txt needs WordPress to be configured with a permalink\n"
+"WP Humans.txt needs WordPress to be configured with a permalink\n"
 "            structure other than the default to work properly."
 msgstr ""
 
@@ -95,6 +221,10 @@ msgstr ""
 msgid "Plugin settings updated."
 msgstr ""
 
-#: lib/WPHumansTxt/Help.php:24
-msgid "Basic"
+#: lib/WPHumansTxt/Help.php:32
+msgid "Usage"
+msgstr ""
+
+#: lib/WPHumansTxt/Help.php:39
+msgid "Examples"
 msgstr ""
