@@ -140,7 +140,7 @@ class WPHumansTxt
         if (!get_option('permalink_structure')) {
             add_action(
                 'admin_notices',
-                 array(&$this, 'permalinkNotice')
+                array(&$this, 'permalinkNotice')
             );
             return false;
         }
