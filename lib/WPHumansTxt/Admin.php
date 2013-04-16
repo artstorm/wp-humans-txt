@@ -40,6 +40,18 @@ class WPHumansTxt_Admin
 
         $data = array(
             'options' => get_option(WPHumansTxt::OPTION_KEY),
+            'buttons' => array(
+                array('',
+                    __('None', WPHumansTxt::TEXT_DOMAIN)),
+                array('humanstxt-isolated-blank.gif',
+                    __('Humans.txt blank isolated', WPHumansTxt::TEXT_DOMAIN)),
+                array('humanstxt-isolated-orange.gif',
+                    __('Humans.txt orange isolated', WPHumansTxt::TEXT_DOMAIN)),
+                array('humanstxt-transparent-1ink.png',
+                    __('Humans.txt transparent', WPHumansTxt::TEXT_DOMAIN)),
+                array('humanstxt-transparent-color.png',
+                    __('Humans.txt b/n transparent', WPHumansTxt::TEXT_DOMAIN)),
+            )
         );
         echo WPHumansTxt_View::render('admin', $data);
     }
@@ -66,14 +78,6 @@ class WPHumansTxt_Admin
         $plugin = get_plugin_data(WPHumansTxt::FILE, false, false);
         $version = $plugin['Version'];
 
-        // wp_register_style(
-        //     'wp-humans-txt',
-        //     plugins_url('assets/tabs.css', WPHumansTxt::FILE),
-        //     array(),
-        //     $version
-        // );
-        // wp_enqueue_style('wp-humans-txt');
-
         wp_enqueue_script(
             'wp-humans-txt',
             plugins_url('assets/tab-handler.js', WPHumansTxt::FILE),
@@ -89,6 +93,7 @@ class WPHumansTxt_Admin
         $options = array(
             'humanstxt'   => $_POST['humanstxt'],
             'author_link' => isset($_POST['author_link']) ? true : false,
+            'button'      => $_POST['humanstxt_button'],
         );
 
         update_option(WPHumansTxt::OPTION_KEY, $options);
