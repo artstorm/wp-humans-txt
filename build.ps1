@@ -156,9 +156,11 @@ function svn
 
     Write-Host "Version to build: $version"
     # Checkout SVN repo
-    svn.exe co http://plugins.svn.wordpress.org/wp-humanstxt/tags/ build/tags
+    Write-Host "Checking out tags folder..."
+    svn.exe co --depth empty http://plugins.svn.wordpress.org/wp-humanstxt/tags/ build/tags
 
     # Create new tag
+    Write-Host "Building new tag..."
     mkdir build/tags/$version
 
     # Copy files
@@ -172,18 +174,23 @@ function svn
 
     # # Add and commit
     svn.exe add build/tags/$version
-
     cd build/tags
     svn.exe ci -m "Tagged version $version"
 
-    # # Cleanup
+    if (!$LastExitCode -eq 0) {
+        Write-Host "Error! Could not commit the new tag. Exiting." -foregroundcolor "Red"
+        Exit
+    }
+
+    # Cleanup
     cd ../..
-    rm build -Recurse
+    Remove-Item build -Recurse -Force
 
-    # Git tag it
+    # Git tag the new version, and push master to the repo.
     git tag -a $version -m "Tagged version $version"
+    git push origin master --tags
 
-    echo "All done! Remember to update stable tag in SVN repo"
+    Write-Host "All done!"
 }
 
 # ------------------------------------------------------------------------------
