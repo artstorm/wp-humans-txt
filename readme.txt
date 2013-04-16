@@ -73,6 +73,12 @@ take a moment to review the guidelines for contributing.
 [Guidelines](https://github.com/artstorm/wp-humans-txt/blob/develop/CONTRIBUTING.md)
 
 
+== Screenshots ==
+
+1. The admin screen to control the plugin.
+2. The built in help texts available from the admin screen.
+
+
 == Changelog ==
 
 = Version 0.3 - 16 Apr 2013 =
