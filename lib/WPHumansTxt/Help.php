@@ -26,6 +26,13 @@ class WPHumansTxt_Help
             'content' => $this->helpIntro()
             )
         );
+        $screen->add_help_tab(
+            array(
+            'id'      => 'usage-plugin-help',
+            'title'   => __('Usage', WPHumansTxt::TEXT_DOMAIN),
+            'content' => $this->helpUsage()
+            )
+        );
     }
 
     /**
@@ -37,10 +44,18 @@ class WPHumansTxt_Help
     }
 
     /**
-     * The basic help tab.
+     * The introduction help tab.
      */
     public function helpIntro()
     {
         return WPHumansTxt_View::render('help_intro');
+    }
+
+    /**
+     * The usage help tab.
+     */
+    public function helpUsage()
+    {
+        return WPHumansTxt_View::render('help_usage');
     }
 }
