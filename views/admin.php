@@ -38,7 +38,9 @@
                 <select name="humanstxt_button" type="checkbox" id="humanstxt_button">
                     <?php
                     foreach ($buttons as $button) {
-                        echo "<option value='{$button[0]}'>{$button[1]}</option>";
+                        echo "<option value='{$button[0]}'";
+                        echo ($button[0] == $options['button']) ? ' selected' : '';
+                        echo ">{$button[1]}</option>";
                     }
                     ?>
                 </select>

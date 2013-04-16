@@ -93,6 +93,7 @@ class WPHumansTxt_Admin
         $options = array(
             'humanstxt'   => $_POST['humanstxt'],
             'author_link' => isset($_POST['author_link']) ? true : false,
+            'button'      => $_POST['humanstxt_button'],
         );
 
         update_option(WPHumansTxt::OPTION_KEY, $options);
