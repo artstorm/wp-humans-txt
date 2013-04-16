@@ -33,6 +33,13 @@ class WPHumansTxt_Help
             'content' => $this->helpUsage()
             )
         );
+        $screen->add_help_tab(
+            array(
+            'id'      => 'examples-plugin-help',
+            'title'   => __('Examples', WPHumansTxt::TEXT_DOMAIN),
+            'content' => $this->helpExamples()
+            )
+        );
     }
 
     /**
@@ -57,5 +64,13 @@ class WPHumansTxt_Help
     public function helpUsage()
     {
         return WPHumansTxt_View::render('help_usage');
+    }
+
+    /**
+     * The usage help tab.
+     */
+    public function helpExamples()
+    {
+        return WPHumansTxt_View::render('help_examples');
     }
 }
