@@ -18,6 +18,11 @@
             rows="20"><?php
             echo $options['humanstxt'];
         ?></textarea>
+        <p>
+        <a id="insert_base_template" class="button"><?php
+            _e('Insert Base Template', WPHumansTxt::TEXT_DOMAIN);
+        ?></a>
+        </p>
 
         <h3><?php _e('Options', WPHumansTxt::TEXT_DOMAIN); ?></h3>
 
