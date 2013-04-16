@@ -78,14 +78,6 @@ class WPHumansTxt_Admin
         $plugin = get_plugin_data(WPHumansTxt::FILE, false, false);
         $version = $plugin['Version'];
 
-        // wp_register_style(
-        //     'wp-humans-txt',
-        //     plugins_url('assets/tabs.css', WPHumansTxt::FILE),
-        //     array(),
-        //     $version
-        // );
-        // wp_enqueue_style('wp-humans-txt');
-
         wp_enqueue_script(
             'wp-humans-txt',
             plugins_url('assets/tab-handler.js', WPHumansTxt::FILE),
