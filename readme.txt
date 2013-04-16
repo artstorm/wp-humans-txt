@@ -4,7 +4,7 @@ Donate link: http://johansteen.se/donate/
 Tags: humans.txt, credits, humans, txt
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 0.3
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,14 @@ take a moment to review the guidelines for contributing.
 
 
 == Changelog ==
+
+= Version 1.0 - 16 Apr 2013 =
+ * Adds a button to the plugin admin to quickly view the current humans.txt.
+ * Adds an insert button for a base template to the plugin admin.
+ * Adds more help sections and elaborates more on the help texts available from
+   the admin screen.
+ * Adds content type to the author meta link.
+ * Changes the plugin name to use capital H.
 
 = Version 0.3 - 16 Apr 2013 =
  * Adds author link to the html head section.
