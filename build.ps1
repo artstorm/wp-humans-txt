@@ -207,11 +207,12 @@ function assets
     }
 
     Write-Host "Updating screenshots..."
-    Remove-Item build/screenshot-*.*
+    Remove-Item build/*.*
     Copy-Item repo/screenshot-*.* build/
+    Copy-Item repo/banner-*.jpg* build/
 
     Write-Host "Commiting the assets folder..."
-    svn.exe add build/*.jpg
+    svn.exe add --force build/*.jpg
     cd build
     svn.exe ci -m "Updates repository assets."
     if (!$LastExitCode -eq 0) {
