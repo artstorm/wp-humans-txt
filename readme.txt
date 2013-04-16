@@ -15,8 +15,9 @@ humanstxt.org.
 == Description ==
 
 The plugin generates a virtual humans.txt file complying with the specifications
-at humanstxt.org. The virtual file is located at domain.com/humans.txt. The
-plugin is fast, lightweight and straightforward to use.
+at [humanstxt.org](http://humanstxt.org/). The virtual file is located at 
+`WordPress Install/humans.txt`. The plugin is fast, lightweight and 
+straightforward to use.
 
 = Features =
 
