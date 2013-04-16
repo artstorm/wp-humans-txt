@@ -82,6 +82,8 @@ function bump($newVersion)
     # with a better method to handle this during a release.
     # findReplaceFile 'README.md' "\?branch=develop" "?branch=master"
     # bumpMessage "README.md: Changed Travis CI badge from develop to master branch"
+    git add .
+    git commit -m "Bumps version number."
 
     bumpMessage "pot file: Updating..."
     xgettext -o lang/wp-humans-txt.pot -L php --keyword=_e --keyword=__  `

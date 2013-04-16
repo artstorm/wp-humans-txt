@@ -19,5 +19,37 @@
             echo $options['humanstxt'];
         ?></textarea>
 
+        <h3><?php _e('Options', WPHumansTxt::TEXT_DOMAIN); ?></h3>
+
+        <table class="form-table">
+            <tr valign="top">
+                <th scope="row"><?php _e('Author link', WPHumansTxt::TEXT_DOMAIN); ?></th>
+                <td><label for="author_link">
+                <input name="author_link" type="checkbox" id="author_link" value="1" <?php checked($options['author_link']); ?> />
+                <?php _e('Place an author link to the file within the head of the site.', WPHumansTxt::TEXT_DOMAIN); ?></label>
+                </td>
+            </tr>
+        </table>
+
+        <table class="form-table">
+            <tr valign="top">
+                <th scope="row"><label for="humanstxt_button"><?php _e('Humans.txt button', WPHumansTxt::TEXT_DOMAIN); ?></label></th>
+                <td>
+                <select name="humanstxt_button" type="checkbox" id="humanstxt_button">
+                    <?php
+                    foreach ($buttons as $button) {
+                        echo "<option value='{$button[0]}'";
+                        echo ($button[0] == $options['button']) ? ' selected' : '';
+                        echo ">{$button[1]}</option>";
+                    }
+                    ?>
+                </select>
+                <p class="description">
+                <?php _e('Add a button to the footer, which links to the humans.txt file.', WPHumansTxt::TEXT_DOMAIN); ?>
+                </p>
+                </td>
+            </tr>
+        </table>
+
         <?php submit_button(); ?>
     </form>
