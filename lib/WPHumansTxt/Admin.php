@@ -40,6 +40,18 @@ class WPHumansTxt_Admin
 
         $data = array(
             'options' => get_option(WPHumansTxt::OPTION_KEY),
+            'buttons' => array(
+                array('',
+                    __('None', WPHumansTxt::TEXT_DOMAIN)),
+                array('humanstxt-isolated-blank.gif',
+                    __('Humans.txt blank isolated', WPHumansTxt::TEXT_DOMAIN)),
+                array('humanstxt-isolated-orange.gif',
+                    __('Humans.txt orange isolated', WPHumansTxt::TEXT_DOMAIN)),
+                array('humanstxt-transparent-1ink.png',
+                    __('Humans.txt transparent', WPHumansTxt::TEXT_DOMAIN)),
+                array('humanstxt-transparent-color.png',
+                    __('Humans.txt b/n transparent', WPHumansTxt::TEXT_DOMAIN)),
+            )
         );
         echo WPHumansTxt_View::render('admin', $data);
     }

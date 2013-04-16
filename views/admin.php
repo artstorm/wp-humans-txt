@@ -31,5 +31,23 @@
             </tr>
         </table>
 
+        <table class="form-table">
+            <tr valign="top">
+                <th scope="row"><label for="humanstxt_button"><?php _e('Humans.txt button', WPHumansTxt::TEXT_DOMAIN); ?></label></th>
+                <td>
+                <select name="humanstxt_button" type="checkbox" id="humanstxt_button">
+                    <?php
+                    foreach ($buttons as $button) {
+                        echo "<option value='{$button[0]}'>{$button[1]}</option>";
+                    }
+                    ?>
+                </select>
+                <p class="description">
+                <?php _e('Add a button to the footer, which links to the humans.txt file.', WPHumansTxt::TEXT_DOMAIN); ?>
+                </p>
+                </td>
+            </tr>
+        </table>
+
         <?php submit_button(); ?>
     </form>
