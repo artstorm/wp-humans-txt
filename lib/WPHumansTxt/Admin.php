@@ -45,6 +45,17 @@ class WPHumansTxt_Admin
     }
 
     /**
+     * Display Flashing Message.
+     */
+    private function updateFlash()
+    {
+        printf(
+            "<div class='updated'><p><strong>%s</strong></p></div>",
+            __('Plugin settings updated.', WPHumansTxt::TEXT_DOMAIN)
+        );
+    }
+
+    /**
      * Load CSS and JS on the settings page.
      */
     public function scripts($hook)
@@ -81,5 +92,6 @@ class WPHumansTxt_Admin
         );
 
         update_option(WPHumansTxt::OPTION_KEY, $options);
+        $this->updateFlash();
     }
 }
