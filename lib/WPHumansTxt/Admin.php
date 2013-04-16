@@ -79,8 +79,16 @@ class WPHumansTxt_Admin
         $version = $plugin['Version'];
 
         wp_enqueue_script(
-            'wp-humans-txt',
+            'wp-humans-txt-tab-handler',
             plugins_url('assets/tab-handler.js', WPHumansTxt::FILE),
+            array('jquery'),
+            $version,
+            false
+        );
+
+        wp_enqueue_script(
+            'wp-humans-txt-insert-text',
+            plugins_url('assets/insert-text.js', WPHumansTxt::FILE),
             array('jquery'),
             $version,
             false
