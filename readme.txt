@@ -8,22 +8,26 @@ Stable tag: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Generates a virtual humans.txt file according to the specifications at 
+Generates a virtual humans.txt file that complies with the specifications at 
 humanstxt.org.
 
 
 == Description ==
 
-The plugin generates a virtual humans.txt file according to the specifications
-at humanstxt.org. The virtual file is located at domain.com/humans.txt.
+The plugin generates a virtual humans.txt file complying with the specifications
+at humanstxt.org. The virtual file is located at domain.com/humans.txt. The
+plugin is fast, lightweight and straightforward to use.
 
 = Features =
 
+* Generates a virtual humans.txt, no physical file is created on disk.
+* Optional author link to be inserted in the html head section.
+* Optional humans.txt button to be inserted in the wp footer.
 * Provides an editor within WordPress admin to edit the humans.txt 'file'.
 * Outputs as plain text, with utf-8 encoding.
 * The editor allows the usage of the tab key for convenient editing.
 * Uses WordPress' system for on screen help documentation.
-* Generates a virtual humans.txt, no physical file is created on disk.
+* Cleans up after itself on uninstall.
 
 = Related Links =
 
@@ -33,6 +37,7 @@ at humanstxt.org. The virtual file is located at domain.com/humans.txt.
   "Use this for support and feature requests")
 * [GitHub](https://github.com/artstorm/wp-humans-txt 
   "Contribute to the plugin")
+
 
 == Installation ==
 
@@ -68,6 +73,12 @@ take a moment to review the guidelines for contributing.
 
 
 == Changelog ==
+
+= Version 0.3 - 16 Apr 2013 =
+ * Adds author link to the html head section.
+ * Adds selection of humans.txt buttons to display in the wp_footer, linking to
+   the humans.txt file.
+ * Adds notification message when settings are updated.
 
 = Version 0.2 - 11 Apr 2013 =
  * Adds check so WordPress is properly configured for permalink rewrites.
