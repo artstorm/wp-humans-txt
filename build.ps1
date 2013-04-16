@@ -15,7 +15,7 @@ $ct.CurrentCulture   = $ic
 $ct.CurrentUICulture = $ic
 
 # Generic
-$PLUGIN_NAME = 'WP humans.txt'
+$PLUGIN_NAME = 'WP Humans.txt'
 $VERSION     = '1.0'
 $DATE        = get-date -format "d MMM yyyy"
 $FILES       = @('wp-humans-txt.php', 'readme.txt')

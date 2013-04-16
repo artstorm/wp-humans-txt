@@ -1,4 +1,4 @@
-=== WP humans.txt ===
+=== WP Humans.txt ===
 Contributors: artstorm
 Donate link: http://johansteen.se/donate/
 Tags: humans.txt, credits, humans, txt

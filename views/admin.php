@@ -3,14 +3,14 @@
     <div id="icon-wphumanstxt" style="background: url(<?php
         echo plugin_dir_url(WPHumansTxt::FILE);
         ?>assets/admin-icon-32.png) no-repeat;" class="icon32"></div>
-    <h2>WP humans.txt</h2>
+    <h2>WP Humans.txt</h2>
 
     <form method="post" action="">
         <?php
         wp_nonce_field('wp_humans_txt', 'wp_humans_txt_nonce');
         ?>
 
-        <h3>humans.txt</h3>
+        <h3>Humans.txt</h3>
         <p><label for="humanstxt"><?php
             _e('Enter your humans.txt below.', WPHumansTxt::TEXT_DOMAIN);
         ?></label></p>
