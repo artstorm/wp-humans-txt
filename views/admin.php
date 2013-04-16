@@ -11,9 +11,13 @@
         ?>
 
         <h3>Humans.txt</h3>
-        <p><label for="humanstxt"><?php
-            _e('Enter your humans.txt below.', WPHumansTxt::TEXT_DOMAIN);
-        ?></label></p>
+        <p>
+            <label for="humanstxt"><?php
+            _e('Enter your humans.txt below. Use the help button above for further guidance.', WPHumansTxt::TEXT_DOMAIN);
+            ?></label>
+            <a href='<?php echo home_url('humans.txt'); ?>' class='button button-small'>
+            <?php _e('View', WPHumansTxt::TEXT_DOMAIN); ?> humans.txt</a>
+        </p>
         <textarea name="humanstxt" id="humanstxt" class="code" cols="80"
             rows="20"><?php
             echo $options['humanstxt'];
