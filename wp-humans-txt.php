@@ -37,8 +37,10 @@ spl_autoload_register('WPHumansTxt::autoload');
  */
 class WPHumansTxt
 {
+    /** Hold plugin instance */
     private static $instance = false;
 
+    /** Setup plugin constants */
     const MIN_PHP_VERSION     = '5.2.4';
     const MIN_WP_VERSION      = '3.3';
     const TEXT_DOMAIN         = 'wp-humans-txt';
@@ -79,8 +81,6 @@ class WPHumansTxt
 
     /**
      * PSR-0 compliant autoloader to load classes as needed.
-     *
-     * @since  2.1
      *
      * @param  string  $classname  The name of the class
      * @return null    Return early if the class name does not start with the
