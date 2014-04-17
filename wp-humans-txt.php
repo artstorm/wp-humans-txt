@@ -5,11 +5,11 @@ Plugin URI: http://johansteen.se/code/wp-humans-txt/
 Description: Generates a virtual humans.txt file according to the specifications at <a href="http://humanstxt.org/">humanstxt.org</a>.
 Author: Johan Steen
 Author URI: http://johansteen.se/
-Version: 1.0
+Version: 1.0.1
 License: GPLv2 or later
 Text Domain: wp-humans-txt
 
-Copyright 2013 Johan Steen  (email : artstorm [at] gmail [dot] com)
+Copyright 2014 Johan Steen  (email : artstorm [at] gmail [dot] com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -37,8 +37,10 @@ spl_autoload_register('WPHumansTxt::autoload');
  */
 class WPHumansTxt
 {
+    /** Hold plugin instance */
     private static $instance = false;
 
+    /** Setup plugin constants */
     const MIN_PHP_VERSION     = '5.2.4';
     const MIN_WP_VERSION      = '3.3';
     const TEXT_DOMAIN         = 'wp-humans-txt';
@@ -79,8 +81,6 @@ class WPHumansTxt
 
     /**
      * PSR-0 compliant autoloader to load classes as needed.
-     *
-     * @since  2.1
      *
      * @param  string  $classname  The name of the class
      * @return null    Return early if the class name does not start with the

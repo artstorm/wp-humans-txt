@@ -3,20 +3,20 @@ Contributors: artstorm
 Donate link: http://johansteen.se/donate/
 Tags: humans.txt, credits, humans, txt
 Requires at least: 3.3
-Tested up to: 3.5.1
-Stable tag: 1.0
+Tested up to: 3.9
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Generates a virtual humans.txt file that complies with the specifications at 
+Generates a virtual humans.txt file that complies with the specifications at
 humanstxt.org.
 
 
 == Description ==
 
 The plugin generates a virtual humans.txt file complying with the specifications
-at [humanstxt.org](http://humanstxt.org/). The virtual file is located at 
-`WordPress Install/humans.txt`. The plugin is fast, lightweight and 
+at [humanstxt.org](http://humanstxt.org/). The virtual file is located at
+WordPress Install/humans.txt. The plugin is fast, lightweight and
 straightforward to use.
 
 = Features =
@@ -32,11 +32,11 @@ straightforward to use.
 
 = Related Links =
 
-* [Documentation](http://johansteen.se/code/wp-humans-txt/ 
+* [Documentation](http://johansteen.se/code/wp-humans-txt/
   "Complete usage instructions")
-* [Support Forum](http://wordpress.org/support/plugin/wp-humanstxt 
+* [Support Forum](http://wordpress.org/support/plugin/wp-humanstxt
   "Use this for support and feature requests")
-* [GitHub](https://github.com/artstorm/wp-humans-txt 
+* [GitHub](https://github.com/artstorm/wp-humans-txt
   "Contribute to the plugin")
 
 
@@ -63,13 +63,13 @@ straightforward to use.
 = Where can I get support? =
 
 This is a free plugin, so support is not guaranteed. Post your question in the
-support forum and help might be provided by the developer or by the community.  
+support forum and help might be provided by the developer or by the community.
 [Support Forum](http://wordpress.org/support/plugin/wp-humanstxt)
 
 = How can I contribute? =
 
 You can contribute with Bug Reports, Feature Requests or Pull Requests. Please
-take a moment to review the guidelines for contributing.  
+take a moment to review the guidelines for contributing.
 [Guidelines](https://github.com/artstorm/wp-humans-txt/blob/develop/CONTRIBUTING.md)
 
 
@@ -80,6 +80,9 @@ take a moment to review the guidelines for contributing.
 
 
 == Changelog ==
+
+= Version 1.0.1 - 17 Apr 2014 =
+ * Bugfix: Asset files were not loaded if folder name was changed.
 
 = Version 1.0 - 16 Apr 2013 =
  * Adds a button to the plugin admin to quickly view the current humans.txt.
