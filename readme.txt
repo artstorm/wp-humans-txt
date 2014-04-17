@@ -81,6 +81,9 @@ take a moment to review the guidelines for contributing.
 
 == Changelog ==
 
+= Version 1.0.1 - 17 Apr 2014 =
+ * Bugfix: Asset files were not loaded if folder name was changed.
+
 = Version 1.0 - 16 Apr 2013 =
  * Adds a button to the plugin admin to quickly view the current humans.txt.
  * Adds an insert button for a base template to the plugin admin.
