@@ -72,9 +72,13 @@ class WPHumansTxt_Admin
      */
     public function scripts($hook)
     {
-        if ($hook != 'settings_page_wp-humans-txt/wp-humans-txt') {
+        // Trim the hook to account for folder name differences
+        $hook = split('/', $hook);
+        $hook = end($hook);
+        if ($hook != 'wp-humans-txt') {
             return;
         }
+
         $plugin = get_plugin_data(WPHumansTxt::FILE, false, false);
         $version = $plugin['Version'];
 
