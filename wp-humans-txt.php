@@ -100,7 +100,7 @@ class WPHumansTxt
             $fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace);
             $fileName .= DIRECTORY_SEPARATOR;
         }
-        $fileName .= str_replace('_', DIRECTORY_SEPARATOR, 'lib_'.$className);
+        $fileName .= str_replace('_', DIRECTORY_SEPARATOR, 'src_'.$className);
         $fileName .='.php';
 
         require $fileName;
