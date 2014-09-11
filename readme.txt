@@ -81,6 +81,9 @@ take a moment to review the guidelines for contributing.
 
 == Changelog ==
 
+= Version 1.0.2 - 11 Sep 2014 =
+ * Added Swedish translation.
+
 = Version 1.0.1 - 17 Apr 2014 =
  * Bugfix: Asset files were not loaded if folder name was changed.
 
