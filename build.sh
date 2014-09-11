@@ -57,10 +57,12 @@ PLUGIN_FILE='wp-humans-txt.php'
 #     Write-Host "Plugin successfully built! - $DATE"
 # }
 
+
 # ------------------------------------------------------------------------------
 # Bump
 # Prepares strings for a new release.
 # ------------------------------------------------------------------------------
+
 bump()
 {
     newVersion=$1
