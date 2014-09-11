@@ -88,29 +88,20 @@ bump()
 
     rm *.*.bak
 
+    git add .
+    git commit -m "Bumps version number."
+
+    bumpMessage "pot file: Updating..."
+    xgettext -o lang/wp-humans-txt.pot -L php --keyword=_e --keyword=__  \
+    *.php views/*.php src/WPHumansTxt/*.php
+
+    echo "Done!"
+    echo $hr
+
+    echo "Changes since v$oldVersion"
+    git log $oldVersion..HEAD --oneline
+    echo $hr
 }
-
-# function bump($newVersion)
-# {
-#     # For now, I keep the master branch readme pointing to develop...
-#     # So I don't forget to change it back after a release. Revise if I come up
-#     # with a better method to handle this during a release.
-#     # findReplaceFile 'README.md' "\?branch=develop" "?branch=master"
-#     # bumpMessage "README.md: Changed Travis CI badge from develop to master branch"
-#     git add .
-#     git commit -m "Bumps version number."
-
-#     bumpMessage "pot file: Updating..."
-#     xgettext -o lang/wp-humans-txt.pot -L php --keyword=_e --keyword=__  `
-#     *.php views/*.php lib/WPHumansTxt/*.php
-
-#     Write-Host "Done!"
-#     Write-Host $('-' * 80)
-
-#     Write-Host "Changes since v$oldVersion"
-#     git log $oldVersion`..HEAD --oneline
-#     Write-Host $('-' * 80)
-# }
 
 bumpMessage()
 {
