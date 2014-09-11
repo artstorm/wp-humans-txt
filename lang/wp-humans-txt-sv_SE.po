@@ -3,56 +3,56 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: WP Humans.txt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-11 16:01+0700\n"
+"POT-Creation-Date: 2014-09-11 15:49+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: sv_SE\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: views/admin.php:16
 msgid ""
 "Enter your humans.txt below. Use the help button above for further guidance."
 msgstr ""
+"Skriv in din humans.txt nedan. Använd hjälp knappen ovan för mer information."
 
 #: views/admin.php:19
 msgid "View"
-msgstr ""
+msgstr "Visa"
 
 #: views/admin.php:27
 msgid "Insert Base Template"
-msgstr ""
+msgstr "Infoga basmallen"
 
 #: views/admin.php:31 views/help_usage.php:15 src/WPHumansTxt/Admin.php:22
 msgid "Options"
-msgstr ""
+msgstr "Inställningar"
 
 #: views/admin.php:35
 msgid "Author link"
-msgstr ""
+msgstr "Author länk"
 
 #: views/admin.php:38
 msgid "Place an author link to the file within the head of the site."
-msgstr ""
+msgstr "Infog en author länk till filen i head delen av sajten."
 
 #: views/admin.php:45
 msgid "Humans.txt button"
-msgstr ""
+msgstr "Humans.txt knapp"
 
 #: views/admin.php:57
 msgid "Add a button to the footer, which links to the humans.txt file."
-msgstr ""
+msgstr "Lägg till en knapp till sidfoten, som länkar till humans.txt."
 
 #: views/help_examples.php:1
 msgid "The humans"
-msgstr ""
+msgstr "The humans"
 
 #: views/help_examples.php:3
 msgid ""
@@ -61,10 +61,14 @@ msgid ""
 "role, name, contact, twitter, geolocation, etc. Please be aware that you may "
 "have to deal with spam if you include email adresses.\n"
 msgstr ""
+"\n"
+"Inkludera följande information om varje person som är involverad i projektet: "
+"roll, namn, kontakt, twitter, plats, etc. Var medveten om att du kanske måste "
+"hantera spam om du inkliderar epostadresser.\n"
 
 #: views/help_examples.php:9
 msgid "Additional"
-msgstr ""
+msgstr "Övrigt"
 
 #: views/help_examples.php:11
 msgid ""
@@ -73,10 +77,14 @@ msgid ""
 "of the last update (YYYY/MM/DD), its main language, its Doctype and other "
 "components, tools and software used on the development.\n"
 msgstr ""
+"\n"
+"Du kan också lägga till övrig information om sajten, som t.ex datumet för "
+"den senaste uppdateringen (YYYY/MM/DD), det huvudsakliga språket, dokumenttypen och övriga "
+"komponenter, verktyg och mjukvara använt under utvecklingen.\n"
 
 #: views/help_examples.php:17
 msgid "The standard"
-msgstr ""
+msgstr "Standarden"
 
 #: views/help_examples.php:20
 #, php-format
@@ -84,14 +92,16 @@ msgid ""
 "\n"
 "Visit %s quick start to read more about what to include and the standard.\n"
 msgstr ""
+"\n"
+"Besök %s snabbstart för att läsa mer om vad som ska inkluderas och standarden.\n"
 
 #: views/help_examples.php:28
 msgid "Example"
-msgstr ""
+msgstr "Exempel"
 
 #: views/help_intro.php:1 src/WPHumansTxt/Help.php:25
 msgid "Introduction"
-msgstr ""
+msgstr "Introduktion"
 
 #: views/help_intro.php:3
 msgid ""
@@ -100,10 +110,14 @@ msgid ""
 "website. It's the file that contains information about the different people "
 "who have contributed to building the website.\n"
 msgstr ""
+"\n"
+"Att ha en humans.txt fil är ett initativ för att veta mer om människorna bakom "
+"em sajt. Det är filen som innehåller information om de olika personerna "
+"som har bidragit till att bygga sajten.\n"
 
 #: views/help_intro.php:9
 msgid "Who to mention"
-msgstr ""
+msgstr "Vem ska nämnas"
 
 #: views/help_intro.php:11
 msgid ""
@@ -114,10 +128,16 @@ msgid ""
 "As you can see, the number of people who may take part of the creation of a "
 "site can be big, so the list is almost endless.\n"
 msgstr ""
+"\n"
+"Vem du vill, förutsatt att de vill vara med. Du kan nämna "
+"utvecklare, designer, copywriter, webmaster, SEO, SEM eller "
+"SMO...\n"
+"Som du ser, antalet personer som tar del i skapandet av en  "
+"sajt kan vara stor, så listan blir nästan oändlig.\n"
 
 #: views/help_intro.php:18
 msgid "Learn more"
-msgstr ""
+msgstr "Lär mer"
 
 #: views/help_intro.php:21
 #, php-format
@@ -126,22 +146,25 @@ msgid ""
 "Visit %s to read more about what to include and how to treat the humans.txt "
 "file.\n"
 msgstr ""
+"\n"
+"Besök %s för att läsa mer om och vad att inkludera i humans.txt "
+"file.\n"
 
 #: views/help_sidebar.php:2
 msgid "For more information:"
-msgstr ""
+msgstr "För mer information:"
 
 #: views/help_sidebar.php:6
 msgid "Documentation"
-msgstr ""
+msgstr "Dokumentation"
 
 #: views/help_sidebar.php:10
 msgid "Support Forums"
-msgstr ""
+msgstr "Support Forum"
 
 #: views/help_sidebar.php:14
 msgid "GitHub Contribution"
-msgstr ""
+msgstr "GitHub Contribution"
 
 #: views/help_usage.php:3
 msgid ""
@@ -157,10 +180,21 @@ msgid ""
 "The view humans.txt button let's you quickly see what your current live \n"
 "humans.txt file looks like.\n"
 msgstr ""
+"\n"
+"Använd den här textarean för att skriva in humans.txt informationen. Se exemplen "
+"hjälp\n"
+"sektionen för vad att inkludera. Du kan också använda infoga basmallen "
+"knappen\n"
+"För att få en förgjord humans.txt infogad, som du kan använda som en startpunkt "
+"och\n"
+"ändra till din egen.\n"
+"\n"
+"Visa humans.txt knappen låter dig snabbt se hur den nuvarande humans.txt \n"
+"filen ser ut live.\n"
 
 #: views/help_usage.php:16
 msgid "Author Link"
-msgstr ""
+msgstr "Author länk"
 
 #: views/help_usage.php:18
 msgid ""
@@ -169,10 +203,14 @@ msgid ""
 "links\n"
 "to the humans.txt file. It's a rel author link tag that is inserted.\n"
 msgstr ""
+"\n"
+"Aktivering av denna inställning, infogar en meta tag inom HTML head sektionen som "
+"länkar\n"
+"till humans.txt filen. Det är en rel author länk som är infogad.\n"
 
 #: views/help_usage.php:25
 msgid "humans.txt button"
-msgstr ""
+msgstr "humans.txt knapp"
 
 #: views/help_usage.php:27
 msgid ""
@@ -182,50 +220,57 @@ msgid ""
 "    inserted in the wp_footer section. The button links to the humans.txt "
 "file.\n"
 msgstr ""
+"\n"
+"    Aktivering av detta val tillåter att du kan välja en av fyra knappar som "
+"kommer be\n"
+"    bli infogad i wp_footer sektionen. Knappen länkar till humans.txt "
+"filen.\n"
 
 #: views/notice_permalink.php:4
 msgid ""
 "WP Humans.txt needs WordPress to be configured with a permalink\n"
 "            structure other than the default to work properly."
 msgstr ""
+"WP Humans.txt behöver att WordPress konfigurears med en annan permalänk\n"
+"struktur än förvalet för att fungera korrekt."
 
 #: views/notice_permalink.php:12
 #, php-format
 msgid "Change the setting in the %s."
-msgstr ""
+msgstr "Ändra inställningarna i %s."
 
 #: views/notice_permalink.php:14
 msgid "Permalink Options"
-msgstr ""
+msgstr "Permalink Inställningar"
 
 #: src/WPHumansTxt/Admin.php:45
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: src/WPHumansTxt/Admin.php:47
 msgid "Humans.txt blank isolated"
-msgstr ""
+msgstr "Humans.txt blank isolerad"
 
 #: src/WPHumansTxt/Admin.php:49
 msgid "Humans.txt orange isolated"
-msgstr ""
+msgstr "Humans.txt orange isolerad"
 
 #: src/WPHumansTxt/Admin.php:51
 msgid "Humans.txt transparent"
-msgstr ""
+msgstr "Humans.txt transparent"
 
 #: src/WPHumansTxt/Admin.php:53
 msgid "Humans.txt b/n transparent"
-msgstr ""
+msgstr "Humans.txt b/n transparent"
 
 #: src/WPHumansTxt/Admin.php:66
 msgid "Plugin settings updated."
-msgstr ""
+msgstr "Plugin inställningarna uppdaterad"
 
 #: src/WPHumansTxt/Help.php:32
 msgid "Usage"
-msgstr ""
+msgstr "Användning"
 
 #: src/WPHumansTxt/Help.php:39
 msgid "Examples"
-msgstr ""
+msgstr "Exempel"
