@@ -141,7 +141,7 @@ assets()
     cp repo/icon-*.*g build/
 
     echo "Commiting the assets folder..."
-    svn add --force build/*.jpg
+    svn add --force build/*.*
     cd build
     svn ci -m "Updates repository assets."
     if [ $? -ne 0 ]; then
