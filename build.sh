@@ -244,7 +244,7 @@ case $1 in
 
     bump)
         # Check branch
-        if [ $(gitBranch) != release* ]; then
+        if [[ $(gitBranch) != release* ]]; then
             echo 'Only bump in release branches...'
             exit
         fi

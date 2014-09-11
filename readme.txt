@@ -4,7 +4,7 @@ Donate link: http://johansteen.se/donate/
 Tags: humans.txt, credits, humans, txt
 Requires at least: 3.3
 Tested up to: 4.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,9 @@ take a moment to review the guidelines for contributing.
 
 
 == Changelog ==
+
+= Version 1.0.2 - 11 Sep 2014 =
+ * Added Swedish translation.
 
 = Version 1.0.1 - 17 Apr 2014 =
  * Bugfix: Asset files were not loaded if folder name was changed.
