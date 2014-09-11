@@ -174,33 +174,34 @@ publish()
 # Assets
 # Update the assets in the WordPress Repository
 # ------------------------------------------------------------------------------
-# function assets
-# {
-#     Write-Host "Checking out assets folder..."
-#     svn.exe co http://plugins.svn.wordpress.org/wp-humanstxt/assets/ build
-#     if (!$LastExitCode -eq 0) {
-#         Write-Host "Error! Could not checkout the assets. Exiting." -foregroundcolor "Red"
-#         Exit
-#     }
 
-#     Write-Host "Updating screenshots..."
-#     Remove-Item build/*.*
-#     Copy-Item repo/screenshot-*.* build/
-#     Copy-Item repo/banner-*.jpg* build/
+assets()
+{
+    echo "Checking out assets folder..."
+    svn co http://plugins.svn.wordpress.org/wp-humanstxt/assets/ build
+    if [ $? -ne 0 ]; then
+        echo "Error! Could not checkout the assets. Exiting."
+        exit
+    fi
 
-#     Write-Host "Commiting the assets folder..."
-#     svn.exe add --force build/*.jpg
-#     cd build
-#     svn.exe ci -m "Updates repository assets."
-#     if (!$LastExitCode -eq 0) {
-#         Write-Host "Error! Could not commit the assets. Exiting." -foregroundcolor "Red"
-#         Exit
-#     }
+    echo "Updating screenshots..."
+    rm build/*.*
+    cp repo/screenshot-*.* build/
+    cp repo/banner-*.jpg* build/
 
-#     cd ..
-#     Remove-Item build -Recurse -Force
-#     Write-Host "All done!"
-# }
+    echo "Commiting the assets folder..."
+    svn add --force build/*.jpg
+    cd build
+    svn ci -m "Updates repository assets."
+    if [ $? -ne 0 ]; then
+        echo "Error! Could not commit the assets. Exiting."
+        exit
+    fi
+
+    cd ..
+    rm -rf build
+    echo "All done!"
+}
 
 
 # ------------------------------------------------------------------------------
