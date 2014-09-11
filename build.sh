@@ -9,53 +9,8 @@
 # Variables and Setup
 # ------------------------------------------------------------------------------
 
-# Make the script culture independent (ie, don't give me Swedish month names!)
-# $ct                  = [System.Threading.Thread]::CurrentThread
-# $ic                  = [System.Globalization.CultureInfo]::InvariantCulture
-# $ct.CurrentCulture   = $ic
-# $ct.CurrentUICulture = $ic
-
-# Generic
 PLUGIN_NAME='WP Humans.txt'
-# $VERSION     = '1.0'
-# $DATE        = get-date -format "d MMM yyyy"
-# $FILES       = @('wp-humans-txt.php', 'readme.txt')
 PLUGIN_FILE='wp-humans-txt.php'
-
-
-# ------------------------------------------------------------------------------
-# Build
-# Replaces Version and Date in the plugin.
-# ------------------------------------------------------------------------------
-# function build_plugin
-# {
-#     Write-Host '--------------------------------------------'
-#     Write-Host 'Building plugin...'
-#     # cd $LESS_FOLDER
-
-#     # Replace Date and Version
-#     foreach ($file in $FILES)
-#     {
-#         cat $file `
-#             | %{$_ -replace "@BUILD_DATE", $DATE} `
-#             | %{$_ -replace "@DEV_HEAD", $VERSION} `
-#             | Set-Content $file'.tmp'
-
-#         # Set UNIX line endings and UTF-8 encoding.
-#         Get-ChildItem $file'.tmp' | ForEach-Object {
-#           # get the contents and replace line breaks by U+000A
-#           $contents = [IO.File]::ReadAllText($_) -replace "`r`n?", "`n"
-#           # create UTF-8 encoding without signature
-#           $utf8 = New-Object System.Text.UTF8Encoding $false
-#           # write the text back
-#           [IO.File]::WriteAllText($_, $contents, $utf8)
-#         }
-
-#         cp $file'.tmp' $file
-#         Remove-Item $file'.tmp'
-#     }
-#     Write-Host "Plugin successfully built! - $DATE"
-# }
 
 
 # ------------------------------------------------------------------------------
@@ -143,32 +98,27 @@ publish()
     cp -r lang build/tags/$version/
     cp -r src build/tags/$version/
     cp -r views build/tags/$version/
+
+    # Add and commit
+    svn add build/tags/$version
+    cd build/tags
+    svn ci -m "Tagged version $version"
+
+    if [ $? -ne 0 ]; then
+        echo "Error! Could not commit the new tag. Exiting."
+        exit
+    fi
+
+    # Cleanup
+    cd ../..
+    rm -rf build
+
+    # Git tag the new version, and push master to the repo.
+    git tag -a $version -m "Tagged version $version"
+    git push origin master --tags
+
+    echo "All done!"
 }
-
-# function svn
-# {
-
-
-#     # # Add and commit
-#     svn.exe add build/tags/$version
-#     cd build/tags
-#     svn.exe ci -m "Tagged version $version"
-
-#     if (!$LastExitCode -eq 0) {
-#         Write-Host "Error! Could not commit the new tag. Exiting." -foregroundcolor "Red"
-#         Exit
-#     }
-
-#     # Cleanup
-#     cd ../..
-#     Remove-Item build -Recurse -Force
-
-#     # Git tag the new version, and push master to the repo.
-#     git tag -a $version -m "Tagged version $version"
-#     git push origin master --tags
-
-#     Write-Host "All done!"
-# }
 
 # ------------------------------------------------------------------------------
 # Assets
@@ -318,7 +268,7 @@ case $1 in
         # Check branch
         if [ $(gitBranch) != 'master' ]; then
             echo 'Only publish releases from the master branch...'
-            # exit
+            exit
         fi
 
         publish
