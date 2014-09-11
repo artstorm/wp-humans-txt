@@ -184,10 +184,11 @@ assets()
         exit
     fi
 
-    echo "Updating screenshots..."
+    echo "Updating assets..."
     rm build/*.*
     cp repo/screenshot-*.* build/
-    cp repo/banner-*.jpg* build/
+    cp repo/banner-*.*g build/
+    cp repo/icon-*.*g build/
 
     echo "Commiting the assets folder..."
     svn add --force build/*.jpg
