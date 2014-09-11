@@ -91,10 +91,6 @@ bump()
     git add .
     git commit -m "Bumps version number."
 
-    bumpMessage "pot file: Updating..."
-    xgettext -o lang/wp-humans-txt.pot -L php --keyword=_e --keyword=__  \
-    *.php views/*.php src/WPHumansTxt/*.php
-
     echo "Done!"
     echo $hr
 
@@ -122,30 +118,36 @@ findVersionNumber()
 
 
 # ------------------------------------------------------------------------------
-# SVN
+# Publish
 # Push a new release to the WordPress Repository
 # ------------------------------------------------------------------------------
+
+publish()
+{
+    version=$(findVersionNumber)
+
+    echo "Version to build: $version"
+    # Checkout SVN repo
+    echo "Checking out tags folder..."
+    svn co --depth empty http://plugins.svn.wordpress.org/wp-humanstxt/tags/ build/tags
+
+    # Create new tag
+    echo "Building new tag..."
+    mkdir build/tags/$version
+
+    # Copy files
+    cp wp-humans-txt.php build/tags/$version/
+    cp readme.txt build/tags/$version/
+
+    cp -r assets build/tags/$version/
+    cp -r lang build/tags/$version/
+    cp -r src build/tags/$version/
+    cp -r views build/tags/$version/
+}
+
 # function svn
 # {
-#     $version = findVersionNumber
 
-#     Write-Host "Version to build: $version"
-#     # Checkout SVN repo
-#     Write-Host "Checking out tags folder..."
-#     svn.exe co --depth empty http://plugins.svn.wordpress.org/wp-humanstxt/tags/ build/tags
-
-#     # Create new tag
-#     Write-Host "Building new tag..."
-#     mkdir build/tags/$version
-
-#     # Copy files
-#     cp wp-humans-txt.php build/tags/$version/
-#     cp readme.txt build/tags/$version/
-
-#     cp assets/ -Destination build/tags/$version/assets/ -Recurse
-#     cp lang/   -Destination build/tags/$version/lang/   -Recurse
-#     cp lib/    -Destination build/tags/$version/lib/    -Recurse
-#     cp views/  -Destination build/tags/$version/views/  -Recurse
 
 #     # # Add and commit
 #     svn.exe add build/tags/$version
@@ -202,6 +204,31 @@ findVersionNumber()
 
 
 # ------------------------------------------------------------------------------
+# Translation files
+# ------------------------------------------------------------------------------
+
+trans()
+{
+    # Generate pot file
+    xgettext \
+    -o lang/wp-humans-txt.pot \
+    -L php --keyword=_e --keyword=__ --keyword=_n \
+    *.php views/*.php src/WPHumansTxt/*.php
+
+    # Update po files with potential new changes from the pot file
+    msgmerge --update lang/wp-humans-txt-sv_SE.po lang/wp-humans-txt.pot
+
+    # Compile .mo files
+    msgfmt -cv -o lang/wp-humans-txt-sv_SE.mo lang/wp-humans-txt-sv_SE.po
+
+    # Cleanup temporary file
+    if [ -f lang/wp-humans-txt-sv_SE.po~ ]; then
+        rm lang/wp-humans-txt-sv_SE.po~
+    fi
+}
+
+
+# ------------------------------------------------------------------------------
 # Console Output
 # ------------------------------------------------------------------------------
 
@@ -233,8 +260,9 @@ arguments()
 {
     echo 'ARGUMENTS'
     echo 'bump     Bumps the version number of the plugin.'
-    echo 'svn      Push a new release to the WordPress repository.'
+    echo 'publish  Push a new release to the WordPress repository.'
     echo 'assets   Updates the assets in the WordPress repository.'
+    echo 'trans    Updates translation files.'
     echo $hr
 }
 
@@ -258,11 +286,11 @@ gitBranch()
 # Handle Arguments
 # ------------------------------------------------------------------------------
 
+view 'header'
+
 case $1 in
 
     bump)
-        view 'header'
-
         # Check branch
         if [ $(gitBranch) != 'master' ]; then
             echo 'Only bump in release branches...'
@@ -284,35 +312,26 @@ case $1 in
         view 'checklist'
     ;;
 
-    svn)
-        echo 'ok'
+    publish)
+        # Check branch
+        if [ $(gitBranch) != 'master' ]; then
+            echo 'Only publish releases from the master branch...'
+            # exit
+        fi
+
+        publish
     ;;
 
     assets)
-        view 'header'
         assets
     ;;
 
+    trans)
+        trans
+    ;;
+
     *)
-        echo 'no'
-        view 'header'
         view 'arguments'
     ;;
 
 esac
-
-# switch ($args[0])
-# {
-#     "svn" {
-#         header
-
-#         # Check branch
-#         $gitStatus = Get-GitStatus('.')
-#         if (!$gitStatus.Branch.StartsWith('master')) {
-#             Write-Host "Only publish releases from the master branch..." `
-#                 -foregroundcolor "Red"
-#             Exit
-#         }
-#         svn
-#     }
-
