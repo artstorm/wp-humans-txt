@@ -3,7 +3,7 @@
 # Build Script for WordPress Plugins
 #
 # @author       Johan Steen <artstorm at gmail dot com>
-# @uri          http://johansteen.se/
+# @uri          https://johansteen.se/
 
 # ------------------------------------------------------------------------------
 # Variables and Setup
@@ -141,7 +141,7 @@ assets()
     cp repo/icon-*.*g build/
 
     echo "Commiting the assets folder..."
-    svn add --force build/*.jpg
+    svn add --force build/*.*
     cd build
     svn ci -m "Updates repository assets."
     if [ $? -ne 0 ]; then
