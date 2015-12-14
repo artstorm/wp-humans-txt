@@ -3,7 +3,7 @@
  * Generate a virtual humans.txt.
  *
  * @author   Johan Steen <artstorm at gmail dot com>
- * @link     http://johansteen.se/
+ * @link     https://johansteen.se/
  */
 class WPHumansTxt_Rewrite
 {

@@ -2,7 +2,7 @@
 <?php _e('For more information:', 'wp-humans-txt'); ?>
 </strong></p>
 
-<p><a href="http://johansteen.se/code/wp-humans-txt/" target="_blank"><?php
+<p><a href="https://johansteen.se/code/wp-humans-txt/" target="_blank"><?php
 _e('Documentation', 'wp-humans-txt');
 ?></a></p>
 

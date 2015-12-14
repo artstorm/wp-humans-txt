@@ -1,7 +1,7 @@
 === WP Humans.txt ===
 Contributors: artstorm
-Donate link: http://johansteen.se/donate/
-Tags: humans.txt, credits, humans, txt
+Donate link: https://johansteen.se/donate/
+Tags: humans.txt, cresdits, humans, txt
 Requires at least: 3.3
 Tested up to: 4.4
 Stable tag: 1.0.3
@@ -32,7 +32,7 @@ straightforward to use.
 
 = Related Links =
 
-* [Documentation](http://johansteen.se/code/wp-humans-txt/
+* [Documentation](https://johansteen.se/code/wp-humans-txt/
   "Complete usage instructions")
 * [Support Forum](http://wordpress.org/support/plugin/wp-humanstxt
   "Use this for support and feature requests")
