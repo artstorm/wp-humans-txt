@@ -1,15 +1,16 @@
 <?php
 /*
 Plugin Name: WP Humans.txt
-Plugin URI: http://johansteen.se/code/wp-humans-txt/
+Plugin URI: https://johansteen.se/code/wp-humans-txt/
 Description: Generates a virtual humans.txt file according to the specifications at <a href="http://humanstxt.org/">humanstxt.org</a>.
 Author: Johan Steen
-Author URI: http://johansteen.se/
+Author URI: https://johansteen.se/
 Version: 1.0.2
 License: GPLv2 or later
 Text Domain: wp-humans-txt
+Domain Path: /lang
 
-Copyright 2014 Johan Steen  (email : artstorm [at] gmail [dot] com)
+Copyright 2014-2015 Johan Steen  (email : artstorm [at] gmail [dot] com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -43,7 +44,6 @@ class WPHumansTxt
     /** Setup plugin constants */
     const MIN_PHP_VERSION     = '5.2.4';
     const MIN_WP_VERSION      = '3.3';
-    const TEXT_DOMAIN         = 'wp-humans-txt';
     const OPTION_KEY          = 'wp_humans_txt';
     const FILE                = __FILE__;
 
@@ -71,7 +71,13 @@ class WPHumansTxt
         if (!$this->testPermalinks()) {
             return;
         }
-        add_action('init', array($this, 'textDomain'));
+
+        load_plugin_textdomain(
+            'wp-humans-txt',
+            false,
+            dirname(plugin_basename(__FILE__)).'/lang/'
+        );
+
         register_uninstall_hook(__FILE__, array(__CLASS__, 'uninstall'));
 
         new WPHumansTxt_Rewrite;
@@ -104,24 +110,6 @@ class WPHumansTxt
         $fileName .='.php';
 
         require $fileName;
-    }
-
-    /**
-     * Loads the plugin text domain for translation
-     */
-    public function textDomain()
-    {
-        $domain = self::TEXT_DOMAIN;
-        $locale = apply_filters('plugin_locale', get_locale(), $domain);
-        load_textdomain(
-            $domain,
-            WP_LANG_DIR.'/'.$domain.'/'.$domain.'-'.$locale.'.mo'
-        );
-        load_plugin_textdomain(
-            $domain,
-            false,
-            dirname(plugin_basename(__FILE__)).'/lang/'
-        );
     }
 
     /**
