@@ -1,10 +1,10 @@
 === WP Humans.txt ===
 Contributors: artstorm
-Donate link: http://johansteen.se/donate/
-Tags: humans.txt, credits, humans, txt
+Donate link: https://johansteen.se/donate/
+Tags: humans.txt, cresdits, humans, txt
 Requires at least: 3.3
-Tested up to: 4.0
-Stable tag: 1.0.2
+Tested up to: 4.4
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,7 +32,7 @@ straightforward to use.
 
 = Related Links =
 
-* [Documentation](http://johansteen.se/code/wp-humans-txt/
+* [Documentation](https://johansteen.se/code/wp-humans-txt/
   "Complete usage instructions")
 * [Support Forum](http://wordpress.org/support/plugin/wp-humanstxt
   "Use this for support and feature requests")
@@ -80,6 +80,9 @@ take a moment to review the guidelines for contributing.
 
 
 == Changelog ==
+
+= Version 1.0.3 - 14 Dec 2015 =
+ * Updates translatable strings to be Language Pack compatible.
 
 = Version 1.0.2 - 11 Sep 2014 =
  * Added Swedish translation.
