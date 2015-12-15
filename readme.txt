@@ -4,7 +4,7 @@ Donate link: https://johansteen.se/donate/
 Tags: humans.txt, cresdits, humans, txt
 Requires at least: 3.3
 Tested up to: 4.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -81,7 +81,10 @@ take a moment to review the guidelines for contributing.
 
 == Changelog ==
 
-= Version 1.0.3 - 14 Dec 2015 =
+= Version 1.0.4 - 15 Dec 2015 =
+ * Adjusts text domain and plugin slug to be compatible with language packs.
+
+ = Version 1.0.3 - 14 Dec 2015 =
  * Updates translatable strings to be Language Pack compatible.
 
 = Version 1.0.2 - 11 Sep 2014 =
