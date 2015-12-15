@@ -9,24 +9,24 @@ change into your own.
 The view humans.txt button let's you quickly see what your current live
 humans.txt file looks like.
 ",
-    'wp-humans-txt'
+    'wp-humanstxt'
 ); ?>
 
-<h2><?php _e('Options', 'wp-humans-txt'); ?></h2>
-<h3><?php _e('Author Link', 'wp-humans-txt'); ?></h3>
+<h2><?php _e('Options', 'wp-humanstxt'); ?></h2>
+<h3><?php _e('Author Link', 'wp-humanstxt'); ?></h3>
 <?php _e(
     "
 Enabling this option, inserts a meta tag within the HTML head section that links
 to the humans.txt file. It's a rel author link tag that is inserted.
 ",
-    'wp-humans-txt'
+    'wp-humanstxt'
 ); ?>
 
-<h3><?php _e('humans.txt button', 'wp-humans-txt'); ?></h3>
+<h3><?php _e('humans.txt button', 'wp-humanstxt'); ?></h3>
 <?php _e(
     "
     Enabling this option allows you to choose one of four buttons that will be
     inserted in the wp_footer section. The button links to the humans.txt file.
 ",
-    'wp-humans-txt'
+    'wp-humanstxt'
 );

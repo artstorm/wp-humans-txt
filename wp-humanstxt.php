@@ -5,9 +5,9 @@ Plugin URI: https://johansteen.se/code/wp-humans-txt/
 Description: Generates a virtual humans.txt file according to the specifications at <a href="http://humanstxt.org/">humanstxt.org</a>.
 Author: Johan Steen
 Author URI: https://johansteen.se/
-Version: 1.0.3
+Version: 1.0.4
 License: GPLv2 or later
-Text Domain: wp-humans-txt
+Text Domain: wp-humanstxt
 Domain Path: /lang
 
 Copyright 2014-2015 Johan Steen  (email : artstorm [at] gmail [dot] com)
@@ -73,7 +73,7 @@ class WPHumansTxt
         }
 
         load_plugin_textdomain(
-            'wp-humans-txt',
+            'wp-humanstxt',
             false,
             dirname(plugin_basename(__FILE__)).'/lang/'
         );
