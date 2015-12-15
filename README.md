@@ -1,6 +1,7 @@
 # WP Humans.txt
 
 [![Build Status](https://travis-ci.org/artstorm/wp-humans-txt.png?branch=develop)](https://travis-ci.org/artstorm/wp-humans-txt)
+[![StyleCI](https://styleci.io/repos/9210672/shield)](https://styleci.io/repos/9210672)
 
 WordPress Plugin that generates a virtual humans.txt file according to the
 specifications at [humanstxt.org](http://humanstxt.org/).
