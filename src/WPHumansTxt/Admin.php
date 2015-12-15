@@ -19,7 +19,7 @@ class WPHumansTxt_Admin
     public function menu()
     {
         $page = add_options_page(
-            'WP Humans.txt '.__('Options', 'wp-humans-txt'),
+            'WP Humans.txt '.__('Options', 'wp-humanstxt'),
             'WP Humans.txt',
             'administrator',
             plugin_basename(WPHumansTxt::FILE),
@@ -42,15 +42,15 @@ class WPHumansTxt_Admin
             'options' => get_option(WPHumansTxt::OPTION_KEY),
             'buttons' => array(
                 array('',
-                    __('None', 'wp-humans-txt')),
+                    __('None', 'wp-humanstxt')),
                 array('humanstxt-isolated-blank.gif',
-                    __('Humans.txt blank isolated', 'wp-humans-txt')),
+                    __('Humans.txt blank isolated', 'wp-humanstxt')),
                 array('humanstxt-isolated-orange.gif',
-                    __('Humans.txt orange isolated', 'wp-humans-txt')),
+                    __('Humans.txt orange isolated', 'wp-humanstxt')),
                 array('humanstxt-transparent-1ink.png',
-                    __('Humans.txt transparent', 'wp-humans-txt')),
+                    __('Humans.txt transparent', 'wp-humanstxt')),
                 array('humanstxt-transparent-color.png',
-                    __('Humans.txt b/n transparent', 'wp-humans-txt')),
+                    __('Humans.txt b/n transparent', 'wp-humanstxt')),
             )
         );
         echo WPHumansTxt_View::render('admin', $data);
@@ -63,7 +63,7 @@ class WPHumansTxt_Admin
     {
         printf(
             "<div class='updated'><p><strong>%s</strong></p></div>",
-            __('Plugin settings updated.', 'wp-humans-txt')
+            __('Plugin settings updated.', 'wp-humanstxt')
         );
     }
 

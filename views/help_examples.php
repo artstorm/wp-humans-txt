@@ -1,31 +1,31 @@
-<h2><?php _e('The humans', 'wp-humans-txt'); ?></h2>
+<h2><?php _e('The humans', 'wp-humanstxt'); ?></h2>
 <?php _e(
     "
 Include the following information about every human involved in the project: role, name, contact, twitter, geolocation, etc. Please be aware that you may have to deal with spam if you include email adresses.
 ",
-    'wp-humans-txt'
+    'wp-humanstxt'
 ); ?>
 
-<h2><?php _e('Additional', 'wp-humans-txt'); ?></h2>
+<h2><?php _e('Additional', 'wp-humanstxt'); ?></h2>
 <?php _e(
     "
 You can also include additional information about the site, such as the date of the last update (YYYY/MM/DD), its main language, its Doctype and other components, tools and software used on the development.
 ",
-    'wp-humans-txt'
+    'wp-humanstxt'
 ); ?>
 
-<h2><?php _e('The standard', 'wp-humans-txt'); ?></h2>
+<h2><?php _e('The standard', 'wp-humanstxt'); ?></h2>
 <?php printf(
     __(
         "
 Visit %s quick start to read more about what to include and the standard.
 ",
-        'wp-humans-txt'
+        'wp-humanstxt'
     ),
     "<a href='http://humanstxt.org/Standard.html'>humanstxt.org</a>"
 ); ?>
 
-<h2><?php _e('Example', 'wp-humans-txt'); ?></h2>
+<h2><?php _e('Example', 'wp-humanstxt'); ?></h2>
 <code>
 /* TEAM */<br />
 Your title: Your name.<br />
