@@ -3,15 +3,15 @@
     <?php
         _e('WP Humans.txt needs WordPress to be configured with a permalink
             structure other than the default to work properly.',
-            'wp-humans-txt'
+            'wp-humanstxt'
         );
     ?>
     <br/>
     <?php
         printf(
-            __('Change the setting in the %s.', 'wp-humans-txt'),
+            __('Change the setting in the %s.', 'wp-humanstxt'),
             '<a href="'.admin_url('options-permalink.php').'">'.
-            __('Permalink Options', 'wp-humans-txt').
+            __('Permalink Options', 'wp-humanstxt').
             '</a>'
         );
     ?>

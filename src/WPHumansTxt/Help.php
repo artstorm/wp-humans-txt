@@ -22,21 +22,21 @@ class WPHumansTxt_Help
         $screen->add_help_tab(
             array(
             'id'      => 'intro-plugin-help',
-            'title'   => __('Introduction', 'wp-humans-txt'),
+            'title'   => __('Introduction', 'wp-humanstxt'),
             'content' => $this->helpIntro()
             )
         );
         $screen->add_help_tab(
             array(
             'id'      => 'usage-plugin-help',
-            'title'   => __('Usage', 'wp-humans-txt'),
+            'title'   => __('Usage', 'wp-humanstxt'),
             'content' => $this->helpUsage()
             )
         );
         $screen->add_help_tab(
             array(
             'id'      => 'examples-plugin-help',
-            'title'   => __('Examples', 'wp-humans-txt'),
+            'title'   => __('Examples', 'wp-humanstxt'),
             'content' => $this->helpExamples()
             )
         );
