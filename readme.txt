@@ -81,7 +81,10 @@ take a moment to review the guidelines for contributing.
 
 == Changelog ==
 
-= Version 1.0.3 - 14 Dec 2015 =
+= Version 1.0.4 - 15 Dec 2015 =
+ * Adjusts text domain and plugin slug to be compatible with language packs.
+
+ = Version 1.0.3 - 14 Dec 2015 =
  * Updates translatable strings to be Language Pack compatible.
 
 = Version 1.0.2 - 11 Sep 2014 =
