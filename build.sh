@@ -10,7 +10,7 @@
 # ------------------------------------------------------------------------------
 
 PLUGIN_NAME='WP Humans.txt'
-PLUGIN_FILE='wp-humans-txt.php'
+PLUGIN_FILE='wp-humanstxt.php'
 
 
 # ------------------------------------------------------------------------------
@@ -91,7 +91,7 @@ publish()
     mkdir build/tags/$version
 
     # Copy files
-    cp wp-humans-txt.php build/tags/$version/
+    cp wp-humanstxt.php build/tags/$version/
     cp readme.txt build/tags/$version/
 
     cp -r assets build/tags/$version/
@@ -163,19 +163,19 @@ trans()
 {
     # Generate pot file
     xgettext \
-    -o lang/wp-humans-txt.pot \
+    -o lang/wp-humanstxt.pot \
     -L php --keyword=_e --keyword=__ --keyword=_n \
     *.php views/*.php src/WPHumansTxt/*.php
 
     # Update po files with potential new changes from the pot file
-    msgmerge --update lang/wp-humans-txt-sv_SE.po lang/wp-humans-txt.pot
+    msgmerge --update lang/wp-humanstxt-sv_SE.po lang/wp-humanstxt.pot
 
     # Compile .mo files
-    msgfmt -cv -o lang/wp-humans-txt-sv_SE.mo lang/wp-humans-txt-sv_SE.po
+    msgfmt -cv -o lang/wp-humanstxt-sv_SE.mo lang/wp-humanstxt-sv_SE.po
 
     # Cleanup temporary file
-    if [ -f lang/wp-humans-txt-sv_SE.po~ ]; then
-        rm lang/wp-humans-txt-sv_SE.po~
+    if [ -f lang/wp-humanstxt-sv_SE.po~ ]; then
+        rm lang/wp-humanstxt-sv_SE.po~
     fi
 }
 

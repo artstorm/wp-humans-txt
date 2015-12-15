@@ -75,7 +75,7 @@ class WPHumansTxt_Admin
         // Trim the hook to account for folder name differences
         $hook = split('/', $hook);
         $hook = end($hook);
-        if ($hook != 'wp-humans-txt') {
+        if ($hook != 'wp-humanstxt') {
             return;
         }
 
