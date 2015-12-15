@@ -7,7 +7,8 @@
  */
 class WPHumansTxt_Rewrite
 {
-    public function __construct() {
+    public function __construct()
+    {
         add_action('template_redirect', array(&$this, 'redirect'), 1);
     }
 
