@@ -23,11 +23,9 @@ class WPHumansTxt_Rewrite
 
         if ($humanUrl == $currentUrl) {
             $options = get_option(WPHumansTxt::OPTION_KEY);
+
             header('Content-Type: text/plain; charset=utf-8');
-            $data = array(
-                'humansTxt' => $options['humanstxt']
-            );
-            echo WPHumansTxt_View::render('humanstxt', $data);
+            echo $options['humanstxt'];
             die;
         }
     }
