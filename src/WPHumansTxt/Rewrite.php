@@ -50,8 +50,7 @@ class WPHumansTxt_Rewrite
     {
         $text = preg_replace_callback(
             '|\[(.*?)\]|',
-            function ($matches)
-            {
+            function ($matches) {
                 $method = 'replace'.ucfirst($matches[1]);
                 if (method_exists($this, $method)) {
                     return $this->$method();
@@ -73,5 +72,15 @@ class WPHumansTxt_Rewrite
     protected function replaceWordpress()
     {
         return 'WordPress '.get_bloginfo('version');
+    }
+
+    /**
+     * Get date for last post.
+     *
+     * @return string
+     */
+    protected function replaceLastpostdate()
+    {
+        return date(get_option('date_format'), strtotime(get_lastpostdate()));
     }
 }
