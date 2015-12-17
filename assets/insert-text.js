@@ -15,8 +15,8 @@ Location: City, Country.\n\
 Name: name or url\n\
 \n\
 /* SITE * /\n\
-Last update: YYYY/MM/DD\n\
+Last update: [lastpostdate]\n\
 Standards: HTML5, CSS3,..\n\
-Components: Modernizr, jQuery, etc.\n\
+Components: [wordpress], Modernizr, jQuery, etc.\n\
 Software: Software used for the development\n\
 ";
