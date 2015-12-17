@@ -7,6 +7,9 @@
  */
 class WPHumansTxt_Help
 {
+    /**
+     * Assign action hooks.
+     */
     public function __construct($optionPage)
     {
         add_action('load-'.$optionPage, array(&$this,'addHelpTabs'));
@@ -14,6 +17,8 @@ class WPHumansTxt_Help
 
     /**
      * Setup the help tabs and sidebar.
+     *
+     * @return void
      */
     public function addHelpTabs()
     {
@@ -35,6 +40,13 @@ class WPHumansTxt_Help
         );
         $screen->add_help_tab(
             array(
+            'id'      => 'tags-plugin-help',
+            'title'   => __('Template Tags', 'wp-humanstxt'),
+            'content' => $this->helpTags()
+            )
+        );
+        $screen->add_help_tab(
+            array(
             'id'      => 'examples-plugin-help',
             'title'   => __('Examples', 'wp-humanstxt'),
             'content' => $this->helpExamples()
@@ -44,6 +56,8 @@ class WPHumansTxt_Help
 
     /**
      * The right sidebar help text.
+     *
+     * @return  string
      */
     public function helpSidebar()
     {
@@ -52,6 +66,8 @@ class WPHumansTxt_Help
 
     /**
      * The introduction help tab.
+     *
+     * @return  string
      */
     public function helpIntro()
     {
@@ -60,6 +76,8 @@ class WPHumansTxt_Help
 
     /**
      * The usage help tab.
+     *
+     * @return  string
      */
     public function helpUsage()
     {
@@ -67,7 +85,19 @@ class WPHumansTxt_Help
     }
 
     /**
+     * The template tags help tab.
+     *
+     * @return  string
+     */
+    public function helpTags()
+    {
+        return WPHumansTxt_View::render('help_tags');
+    }
+
+    /**
      * The usage help tab.
+     *
+     * @return  string
      */
     public function helpExamples()
     {
