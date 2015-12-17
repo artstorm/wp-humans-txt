@@ -41,8 +41,8 @@ Name: name or url<br />
                         [...]<br />
 <br />
 /* SITE */<br />
-Last update: YYYY/MM/DD<br />
+Last update: [lastpostdate]<br />
 Standards: HTML5, CSS3,..<br />
-Components: Modernizr, jQuery, etc.<br />
+Components: [wordpress], Modernizr, jQuery, etc.<br />
 Software: Software used for the development
 </code>
