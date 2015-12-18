@@ -4,7 +4,7 @@ Donate link: https://johansteen.se/donate/
 Tags: humans.txt, cresdits, humans, txt
 Requires at least: 3.3
 Tested up to: 4.4
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,7 @@ straightforward to use.
 * Optional author link to be inserted in the html head section.
 * Optional humans.txt button to be inserted in the wp footer.
 * Provides an editor within WordPress admin to edit the humans.txt 'file'.
+* Dynamic template tags.
 * Outputs as plain text, with utf-8 encoding.
 * The editor allows the usage of the tab key for convenient editing.
 * Uses WordPress' system for on screen help documentation.
@@ -80,6 +81,9 @@ take a moment to review the guidelines for contributing.
 
 
 == Changelog ==
+
+= Version 1.0.5 - 18 Dec 2015 =
+ * Implements dynamic template tags.
 
 = Version 1.0.4 - 15 Dec 2015 =
  * Adjusts text domain and plugin slug to be compatible with language packs.
