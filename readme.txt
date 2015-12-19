@@ -82,6 +82,10 @@ take a moment to review the guidelines for contributing.
 
 == Changelog ==
 
+= Version 1.0.6 - 19 Dec 2015 =
+ * Fixes PHP notice message in WordPress debug mode.
+ * Bumps minimum required PHP version to 5.3.
+
 = Version 1.0.5 - 18 Dec 2015 =
  * Implements dynamic template tags.
 
@@ -117,3 +121,14 @@ take a moment to review the guidelines for contributing.
 
 = Version 0.1 - 11 Apr 2013 =
  * Initial Release.
+
+
+== Upgrade Notice ==
+
+= 1.0.6 =
+The minimum required PHP version have changed from v5.2.4 to v5.3.0 with this
+update of WP Humans.txt to prepare for the next major release.
+
+Most servers should be using PHP v5.3.0 or newer by now, but if you are unsure
+what PHP version your server is using, please check before updating to this
+version of the plugin.
