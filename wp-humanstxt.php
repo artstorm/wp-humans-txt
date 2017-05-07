@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: WP Humans.txt
-Plugin URI: https://johansteen.se/code/wp-humans-txt/
+Plugin URI: https://code.bitbebop.com/wordpress/wp-humans-txt/
 Description: Generates a virtual humans.txt file according to the specifications at <a href="http://humanstxt.org/">humanstxt.org</a>.
 Author: Johan Steen
-Author URI: https://johansteen.se/
+Author URI: https://code.bitbebop.com/
 Version: 1.0.6
 License: GPLv2 or later
 Text Domain: wp-humanstxt
@@ -34,7 +34,7 @@ spl_autoload_register('WPHumansTxt::autoload');
  * Init Singleton Class.
  *
  * @author  Johan Steen <artstorm at gmail dot com>
- * @link    https://johansteen.se/
+ * @link    https://code.bitbebop.com/
  */
 class WPHumansTxt
 {

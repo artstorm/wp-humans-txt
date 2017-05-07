@@ -3,7 +3,7 @@
  * Add links to humans.txt.
  *
  * @author   Johan Steen <artstorm at gmail dot com>
- * @link     https://johansteen.se/
+ * @link     https://code.bitbebop.com/
  */
 class WPHumansTxt_Links
 {
